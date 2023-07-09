@@ -13,6 +13,7 @@ import { getFileURL, useConfig } from "../api";
 export function Progress() {
   const [step, setStep] = useState(0);
   const { data: config } = useConfig();
+  const programsId=0
   return (
     <>
       <FormControl>
@@ -26,7 +27,7 @@ export function Progress() {
             setStep(+e.target.value);
           }}
         >
-          {config?.progress?.map((item, index) => (
+          {config?.programs[programsId]?.progress?.map((item, index) => (
             <MenuItem key={item.id} value={index}>
               {item.name}
             </MenuItem>
@@ -34,8 +35,7 @@ export function Progress() {
         </Select>
       </FormControl>
       <Box>
-        <Text>{config?.progress[step]?.text}</Text>
-        <img alt="" src={getFileURL(config?.progress[step]?.img)}  style={{ marginTop: "5%", display: "block", margin: "auto" }} />
+        model
       </Box>
     </>
   );

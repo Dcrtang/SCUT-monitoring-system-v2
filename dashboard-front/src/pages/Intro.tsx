@@ -15,24 +15,34 @@ import {
 import { useState } from "react";
 import { getFileURL, useConfig } from "../api";
 import { Text } from "../components/Text";
+import { useParams } from "react-router-dom";
 
 export function Intro() {
+  const { projectId } = useParams();
+  const programsId=0
+ 
   const [tab, setTab] = useState(0);
   const { data: config } = useConfig();
+  if (typeof projectId !== 'undefined') {
+    // 在这个条件中，projectId 是有效的，可以安全地使用它来索引数组
+    const situation = config?.programs[programsId]?.detail.situation;
+    console.log(situation);
+  }
   return (
     <>
       <Box sx={{ borderBottom: 1, borderColor: "divider"}}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           <Tab label="项目概况" />
           <Tab label="人员组织" />
-          <Tab label="主梁单元数据" />
+          <Tab label="主梁数据" />
+          <Tab label="斜拉索数据" />
         </Tabs>
       </Box>
       {tab === 0 && (
         <>
-          <Text>{config?.intro.text}</Text>
+          <Text>{config?.programs[programsId]?.detail?.situation}</Text>
           <Box sx={{ height: "5%" }} />
-          <img src={getFileURL(config?.intro.img)} style={{display: "block", margin: "auto" }} />
+          <div>model</div>
         </>
       )}
       {tab === 1 && (
@@ -41,16 +51,16 @@ export function Intro() {
             <TableHead>
               <TableRow>
                 <TableCell>姓名</TableCell>
-                <TableCell>执业或职业资格证书名称</TableCell>
-                <TableCell>拟在本项目工程任职</TableCell>
+                <TableCell>职位</TableCell>
+                <TableCell>联系方式</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {config?.intro.members.map((member) => (
+              {config?.programs[programsId]?.detail.members.map((member) => (
                 <TableRow key={member.name}>
                   <TableCell>{member.name}</TableCell>
-                  <TableCell>{member.cert}</TableCell>
-                  <TableCell>{member.title}</TableCell>
+                  <TableCell>{member.postion}</TableCell>
+                  <TableCell>{member.contactInfo}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -63,26 +73,57 @@ export function Intro() {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>主梁类型</TableCell>
-                  <TableCell>主梁面积/m²</TableCell>
-                  <TableCell>抗弯惯性矩/m⁴</TableCell>
+                  <TableCell>编号</TableCell>
+                  <TableCell>梁长/m</TableCell>
+                  <TableCell>梁宽/m</TableCell>
+                  <TableCell>小里程理论高程/m</TableCell>
+                  <TableCell>大里程理论高程/m⁴</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {config?.intro.unitData.map((data, index) => (
+                {config?.programs[programsId]?.detail.beamData.map((data, index) => (
                   <TableRow key={index}>
-                    <TableCell>{data.type}</TableCell>
-                    <TableCell>{data.area}</TableCell>
-                    <TableCell>{data.moment}</TableCell>
+                    <TableCell>{data.id}</TableCell>
+                    <TableCell>{data.long}</TableCell>
+                    <TableCell>{data.width}</TableCell>
+                    <TableCell>{data.width}</TableCell>
+                    <TableCell>{data.smallMile}</TableCell>
+                    <TableCell>{data.bigMile}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
-          <img
-            style={{ marginTop: "5%" }}
-            src={getFileURL(config?.intro.bridgeImg)}
-          ></img>
+       
+        </Box>
+      )}
+      {tab === 3 && (
+        <Box sx={{ textAlign: "center" }}>
+          <TableContainer component={Paper}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>编号</TableCell>
+                  <TableCell>弹性伸长量/mm</TableCell>
+                  <TableCell>垂度修正量/mm</TableCell>
+                  <TableCell>理论索长/mm</TableCell>
+                  <TableCell>成桥索力/kN</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {config?.programs[programsId]?.detail.cableData.map((data, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{data.id}</TableCell>
+                    <TableCell>{data.elasticity}</TableCell>
+                    <TableCell>{data.vertical}</TableCell>
+                    <TableCell>{data.length}</TableCell>
+                    <TableCell>{data.force}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+       
         </Box>
       )}
     </>

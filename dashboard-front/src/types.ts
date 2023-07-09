@@ -1,95 +1,77 @@
 export interface Config {
   title: string;
-  intro: {
-    text: string;
-    img: string;
 
-    members: {
-      id: string;
+  programs: {
+    id: string;
+
+    intro: {
       name: string;
-      cert: string;
-      title: string;
-    }[];
-
-    unitData: {
-      id: string;
       type: string;
-      area: string;
-      // 抗弯惯性矩
-      moment: string;
-    }[];
-    bridgeImg: string;
-  };
+      status: string;
+      unit: string;
+      inCharge: string;
+      bridgeImg: string;
+    }
 
-  progress: {
-    id: string;
-    name: string;
-    text: string;
-    img: string;
-  }[];
+    detail: {
+      situation: string;
+      model: string;
 
-  report: {
-    id: string;
-    name: string;
-    description: string;
+      members: {
+        id: string;
+        index: string;
+        name: string;
+        postion: string;
+        contactInfo: string;
+      }[]
 
-    length: {
+      beamData: {
+        id: string;
+        index: string;
+        long: string;
+        width: string;
+        smallMile: string;
+        bigMile: string;
+      }[]
+
+      cableData: {
+        id: string;
+        index: string;
+        elasticity: string;
+        vertical: string;
+        length: string;
+        force: string;
+      }[]
+    }
+
+    instructions: {
       id: string;
-      name: string;
-      lengthNum: string;
-      factLeft: string;
-      factMid: string;
-      factRight: string;
-      theoryLeft: string;
-      theoryMid: string;
-      theoryRight: string;
-      errorLeft: string;
-      errorMid: string;
-      errorRight: string;
-    }[];
-
-    width: {
-      id: string;
-      name: string;
-      widthNum: string;
-      factLeft: string;
-      factMid: string;
-      factRight: string;
-      theoryLeft: string;
-      theoryMid: string;
-      theoryRight: string;
-      errorLeft: string;
-      errorMid: string;
-      errorRight: string;
+      file: string;
     }[];
 
-    lengthImg: string;
-    widthImg: string;
-
-    hengImg: string;
-    zongImg: string;
-  }[];
-
-  monitingData: {
-    id: string;
-    name: string;
-    data: {
+    progress: {
       id: string;
       name: string;
-      dataImg: string;
-      modelImg: string;
-    }[]
-  }[];
+      model: string;
+    }[];
 
-  instructions: {
-    id: string;
-    img: string;
-  }[];
+    quality: {
+      elevation: {
+        id: string;
+        name: string;
+        file: string;
+      }[];
 
-  quality: {
-    id: string;
-    name: string;
-    img1: string;
-    img2: string;
-  }[];
+      cableForce: {
+        id: string;
+        name: string;
+        file: string;
+      }[]
+    };
+
+    sensor: {
+      name: string;
+      file: string;
+    };
+  }[]
 }

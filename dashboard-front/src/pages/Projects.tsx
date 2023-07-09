@@ -138,7 +138,9 @@ export function Projects() {
               </CardActionArea>
               <CardActions sx={{ justifyContent: "flex-end" }}>
                 <Button
-                  href={`/intro/${project.id}`}
+                  href={`/intro/
+                  ${project.id}`}
+                 
                   variant="contained"
                   size="small"
                   startIcon={<Visibility sx={{ fontSize: 16 }} />}

@@ -10,9 +10,9 @@ import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import { Admin } from "./pages/Admin";
 import { Intro } from "./pages/Intro";
 import { Login } from "./pages/Login";
-import { Monitor } from "./pages/Monitor";
+import { Sensor } from "./pages/Sensor";
 import { Progress } from "./pages/Progress";
-import { Properties } from "./pages/Properties";
+import { Instructions } from "./pages/Instructions";
 import { Quality } from "./pages/Quality";
 import { Report } from "./pages/Report";
 import {Projects} from "./pages/Projects";
@@ -48,7 +48,7 @@ export const allRoutes = [
   },
 
   {
-    path: "intro/:projectId",
+    path: "intro",
     element: <Intro />,
     title: "项目详情",
     icon: <HomeIcon />,
@@ -68,8 +68,8 @@ export const allRoutes = [
   //   icon: <AirplayIcon />,
   // },
   {
-    path: "/properties",
-    element: <Properties />,
+    path: "/instructions",
+    element: <Instructions />,
     title: "指令下发",
     icon: <AppsIcon />,
   },
@@ -86,8 +86,8 @@ export const allRoutes = [
     icon: <SettingsIcon />,
   },
   {
-    path: "/monitor",
-    element: <Monitor />,
+    path: "/sensor",
+    element: <Sensor />,
     title: "应力传感器检测",
     icon: <AirplayIcon />,
   },
