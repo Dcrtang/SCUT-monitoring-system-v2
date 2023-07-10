@@ -16,10 +16,9 @@ import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api";
 
-export function Login() {
+export function Login({ onLoginStatusChange = new Function() }) {
   const [password, setPassword] = useState("");
   const { mutateAsync: loginMutate, isLoading: loggingIn } = useMutation(login);
-  const navigate = useNavigate();
   const [error, setError] = useState(false);
 
   return (
@@ -44,7 +43,7 @@ export function Login() {
               loginMutate(password)
                 .then((token) => {
                   localStorage.setItem("BEARER_TOKEN", token);
-                  navigate("/admin");
+                  onLoginStatusChange(true);
                 })
                 .catch((err) => {
                   setError(true);

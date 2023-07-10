@@ -21,13 +21,13 @@ agent.interceptors.request.use((config) => {
   return config;
 });
 
-agent.interceptors.response.use(undefined, (error) => {
-  if (error.response.status === 401) {
-    location.replace("/login");
-  } else {
-    throw error;
-  }
-});
+// agent.interceptors.response.use(undefined, (error) => {
+//   if (error.response.status === 401) {
+//     location.replace("/login");
+//   } else {
+//     throw error;
+//   }
+// });
 
 export async function getConfig() {
   return await agent.get<Config>("/config").then((res) => res.data);

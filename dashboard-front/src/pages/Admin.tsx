@@ -20,18 +20,41 @@ import { checkLogin, reset } from "../api";
 import { useMutation } from "react-query";
 import { QualityTab } from "../components/EditorTabs/QualityTab";
 import { ReportTab } from "../components/EditorTabs/ReportTab";
+import { Login } from "./Login";
 
 export function Admin() {
   const [tab, setTab] = useState(0);
   const [open, setOpen] = useState(false);
-  const checkLoginMutation = useMutation(checkLogin, { retry: false });
+  const [isLogin, setIsLogin] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    checkLoginMutation.mutate();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    (async () => {
+      setIsLoading(true);
+      try {
+        await checkLogin();
+        setIsLogin(true);
+      } catch (error) {
+        console.log(error);
+        setIsLogin(false);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
   }, []);
+
   const resetMutation = useMutation(reset);
-  return checkLoginMutation.isLoading ? (
-    <div>loading...</div>
+
+  const handleLoginChange = (status: boolean | ((prevState: boolean) => boolean)) => {
+    setIsLogin(status);
+  };
+
+  console.log(isLogin, isLoading);
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
+
+  return !isLogin ? (
+    <Login onLoginStatusChange={handleLoginChange} />
   ) : (
     <Box sx={{ position: "relative" }}>
       <Button

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
+  AppBar,
   Box,
   Button,
   Card,
@@ -12,24 +13,31 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Toolbar,
   Typography,
 } from "@mui/material";
 import { ArrowBack, Visibility } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Link, Route, useNavigate } from "react-router-dom";
 import { getFileURL, useConfig } from "../api";
-import { useParams } from 'react-router-dom';
-
-
+import { useParams } from "react-router-dom";
+import { ProjectsDetail } from "./ProjectsDetail";
 
 export function Projects() {
-  
-  
-  
   const [tab, setTab] = useState(0);
   const { data: config } = useConfig();
-  
+  const navBarRef = useRef<HTMLDivElement>();
+  const navigator = useNavigate();
   return (
-    <Box sx={{ padding: 3 }}>
+    <Box>
+      <Box component="div" ref={navBarRef}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+              {config?.title}
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </Box>
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>
           <Typography variant="h5" sx={{ color: "#4a4a4a", fontWeight: 500 }}>
@@ -51,7 +59,7 @@ export function Projects() {
         {config?.programs.map((project) => (
           <Grid item xs={12} sm={6} md={3} key={project.id}>
             <Card sx={{ height: "100%" }}>
-              <CardActionArea component={Link} to={`/intro/${project.id}`}>
+              <CardActionArea component={Link} to={"/projectsdetail"}>
                 <CardMedia
                   component="img"
                   height="140"
@@ -93,7 +101,7 @@ export function Projects() {
                     </ListItem>
                     <ListItem disablePadding sx={{ paddingLeft: 0 }}>
                       <ListItemIcon>
-                        <Typography variant="body2" sx={{ fontSize:12 }}>
+                        <Typography variant="body2" sx={{ fontSize: 12 }}>
                           建设单位：
                         </Typography>
                       </ListItemIcon>
@@ -110,10 +118,9 @@ export function Projects() {
               </CardActionArea>
               <CardActions sx={{ justifyContent: "flex-end" }}>
                 <Button
-                  href={`/intro/
-                  ${project.id}
-                  `}
-                
+                  onClick={() => {
+                    navigator("/projectsdetail/intro");
+                  }}
                   variant="contained"
                   size="small"
                   startIcon={<Visibility sx={{ fontSize: 16 }} />}

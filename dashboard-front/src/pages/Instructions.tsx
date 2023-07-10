@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { getFileURL, useConfig } from "../api";
+import { Sidebar } from "../components/Sidebar";
 
 export function Instructions() {
   const { data: config } = useConfig();
@@ -9,6 +10,7 @@ export function Instructions() {
       <Typography variant="h6" component="div" textAlign={"center"}>
         指令属性
       </Typography>
+      
       {config?.programs[programsId]?.instructions?.map((instruction) => (
         <Box key={instruction.id} marginTop="2%">
           添加file
