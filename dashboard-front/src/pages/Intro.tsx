@@ -19,15 +19,15 @@ import { useParams } from "react-router-dom";
 
 export function Intro() {
   const { projectId } = useParams();
-  const programsId=0
  
   const [tab, setTab] = useState(0);
   const { data: config } = useConfig();
-  if (typeof projectId !== 'undefined') {
-    // 在这个条件中，projectId 是有效的，可以安全地使用它来索引数组
-    const situation = config?.programs[programsId]?.detail.situation;
-    console.log(situation);
-  }
+ 
+  
+  // const targetProgram = config?.programs.find(program => program.id === projectId); // 找到目标 program 对象
+  // const programsId = config?.programs.findIndex(program => program.id === projectId) || 0;
+ // 找到目标 program 对象在数组中的索引位置
+  const programsId=0;
   return (
     <>
       <Box sx={{ borderBottom: 1, borderColor: "divider"}}>

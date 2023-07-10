@@ -48,7 +48,7 @@ export const allRoutes = [
   },
 
   {
-    path: "intro",
+    path: "intro/:projectId",
     element: <Intro />,
     title: "项目详情",
     icon: <HomeIcon />,
@@ -68,25 +68,25 @@ export const allRoutes = [
   //   icon: <AirplayIcon />,
   // },
   {
-    path: "/instructions",
+    path: "/instructions/:projectId",
     element: <Instructions />,
     title: "指令下发",
     icon: <AppsIcon />,
   },
   {
-    path: "/progress",
+    path: "/progress/:projectId",
     element: <Progress />,
     title: "工程进度管理",
     icon: <CachedIcon />,
   },
   {
-    path: "/quality",
+    path: "/quality/:projectId",
     element: <Quality />,
     title: "工程质量管理",
     icon: <SettingsIcon />,
   },
   {
-    path: "/sensor",
+    path: "/sensor/:projectId",
     element: <Sensor />,
     title: "应力传感器检测",
     icon: <AirplayIcon />,

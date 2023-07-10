@@ -16,52 +16,24 @@ import {
 } from "@mui/material";
 import { ArrowBack, Visibility } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { getFileURL, useConfig } from "../api";
+import { useParams } from 'react-router-dom';
 
 
-interface Project {
-  id: number;
-  title: string;
-  imageUrl: string;
-  bridgeType: string;
-  status: string;
-  constructionUnit: string;
-}
 
 export function Projects() {
-  // const [projects, setProjects] = useState<Project[]>([]);
-
-  // useEffect(() => {
-  //   fetch("projects.json")
-  //     .then((response) => response.json())
-  //     .then((data) => setProjects(data));
-  // }, []);
- //示例数据
-  const projects = [
-    {
-      id: 1,
-      title: "项目1",
-      imageUrl: "https://via.placeholder.com/150",
-      bridgeType: "类型1",
-      status: "状态1",
-      constructionUnit: "单位1",
-    },
-    {
-      id: 2,
-      title: "项目2",
-      imageUrl: "https://via.placeholder.com/150",
-      bridgeType: "类型2",
-      status: "状态2",
-      constructionUnit: "单位2",
-    },
-  ];
-
-
+  
+  
+  
+  const [tab, setTab] = useState(0);
+  const { data: config } = useConfig();
+  
   return (
     <Box sx={{ padding: 3 }}>
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>
           <Typography variant="h5" sx={{ color: "#4a4a4a", fontWeight: 500 }}>
-            <ArrowBack sx={{ fontSize: 20, marginRight: 1 }} />
+            <Box sx={{ fontSize: 20, marginRight: 1 }} />
             我的项目
           </Typography>
         </Grid>
@@ -76,19 +48,19 @@ export function Projects() {
         </Grid>
       </Grid>
       <Grid container spacing={3} sx={{ marginTop: 3 }}>
-        {projects.map((project) => (
+        {config?.programs.map((project) => (
           <Grid item xs={12} sm={6} md={3} key={project.id}>
             <Card sx={{ height: "100%" }}>
-              <CardActionArea component={Link} to={`/projects/${project.id}`}>
+              <CardActionArea component={Link} to={`/intro/${project.id}`}>
                 <CardMedia
                   component="img"
                   height="140"
-                  image={project.imageUrl}
-                  alt={project.title}
+                  image={project.intro.bridgeImg}
+                  alt={project.intro.name}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    {project.title}
+                    {project.intro.name}
                   </Typography>
                   <List dense>
                     <ListItem disablePadding sx={{ paddingLeft: 0 }}>
@@ -98,7 +70,7 @@ export function Projects() {
                         </Typography>
                       </ListItemIcon>
                       <ListItemText
-                        primary={project.bridgeType}
+                        primary={project.intro.type}
                         primaryTypographyProps={{
                           variant: "body2",
                           sx: { fontSize: 12 },
@@ -112,7 +84,7 @@ export function Projects() {
                         </Typography>
                       </ListItemIcon>
                       <ListItemText
-                        primary={project.status}
+                        primary={project.intro.status}
                         primaryTypographyProps={{
                           variant: "body2",
                           sx: { fontSize: 12 },
@@ -126,7 +98,7 @@ export function Projects() {
                         </Typography>
                       </ListItemIcon>
                       <ListItemText
-                        primary={project.constructionUnit}
+                        primary={project.intro.unit}
                         primaryTypographyProps={{
                           variant: "body2",
                           sx: { fontSize: 12 },
@@ -139,8 +111,9 @@ export function Projects() {
               <CardActions sx={{ justifyContent: "flex-end" }}>
                 <Button
                   href={`/intro/
-                  ${project.id}`}
-                 
+                  ${project.id}
+                  `}
+                
                   variant="contained"
                   size="small"
                   startIcon={<Visibility sx={{ fontSize: 16 }} />}
