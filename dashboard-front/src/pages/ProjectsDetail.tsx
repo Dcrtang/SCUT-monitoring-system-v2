@@ -12,7 +12,7 @@ import {
   colors,
   ListItemIcon,
 } from "@mui/material";
-import {  useLocation, useNavigate, Outlet } from "react-router-dom";
+import {  useLocation, useNavigate, Outlet, useParams } from "react-router-dom";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { allRoutes ,theme } from "../constants";
 import {  useRef } from "react";
@@ -30,29 +30,15 @@ export function ProjectsDetail() {
   const navigate = useNavigate();
   const navBarRef = useRef<HTMLDivElement>();
   const { data: config } = useConfig();
+  const { projectId } = useParams();
  
-  // type RouteObject = {
-  //   path: string;
-  //   element: JSX.Element;
-  //   title?: string | null;
-  //   icon?: JSX.Element | null;
-  // };
-  // const [routes, setRoutes] = useState<RouteObject[]>(homeroutes);
-
-  // useEffect(() => {
-  //   if (location.pathname === "/") {
-  //     setRoutes(homeroutes);
-  //   } else {
-  //     setRoutes(allRoutes);
-  //   }
-  // }, [location, setRoutes]);
   return (
     <>
       <CssBaseline />
       <ReactQueryDevtools />
       <ThemeProvider theme={theme}>
-        <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-          <Box component="div" ref={navBarRef}>
+        <Box sx={{ display: "flex", flexDirection: "column", height: "100%" ,width:"100%"}}>
+          <Box component="div" ref={navBarRef} sx={{width:"100%"}}>
             <AppBar position="static">
               <Toolbar>
                 <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
@@ -77,17 +63,23 @@ export function ProjectsDetail() {
                       disablePadding
                       sx={{ height: "8%" }}
                     >
+                      
                       <ListItemButton
                         sx={{ height: "100%" }}
-                        selected={location.pathname === `/projectsdetail/${route.path}`}
+                        
+                        selected={location.pathname === `/projectsdetail/${projectId}/${route.path}`}
+                  
                         onClick={() => {
                           navigate(route.path);
                         }}
                       >
+               
                         <ListItemIcon>{route.icon}</ListItemIcon>
                         <ListItemText primary={route.title} />
                       </ListItemButton>
+                      
                     </ListItem>
+                    
                   ) : null
                 )}
               </List>
@@ -100,6 +92,7 @@ export function ProjectsDetail() {
                 overflowY: "scroll",
               }}
             >
+              
               <Outlet />
             </Box>
           </Box>

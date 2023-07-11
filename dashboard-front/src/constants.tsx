@@ -4,8 +4,6 @@ import CachedIcon from "@mui/icons-material/Cached";
 import AirplayIcon from "@mui/icons-material/Airplay";
 import AppsIcon from "@mui/icons-material/Apps";
 import SettingsIcon from "@mui/icons-material/Settings";
-import BatchPredictionIcon from "@mui/icons-material/BatchPrediction";
-
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import { Admin } from "./pages/Admin";
 import { Intro } from "./pages/Intro";
@@ -14,10 +12,8 @@ import { Sensor } from "./pages/Sensor";
 import { Progress } from "./pages/Progress";
 import { Instructions } from "./pages/Instructions";
 import { Quality } from "./pages/Quality";
-import { Report } from "./pages/Report";
-import {Projects} from "./pages/Projects";
+import { Projects } from "./pages/Projects";
 import { ProjectsDetail } from "./pages/ProjectsDetail";
-
 
 export const theme = createTheme({
   typography: {
@@ -35,9 +31,13 @@ export const theme = createTheme({
       "\"Segoe UI Symbol\"",
     ].join(","),
   },
+  palette:{
+    primary:{
+      main:"#2B3643",
+    },
+  }
+  
 });
-
-
 
 export const allRoutes = [
   {
@@ -45,7 +45,6 @@ export const allRoutes = [
     element: <Intro />,
     title: "项目详情",
     icon: <HomeIcon />,
-  
   },
 
   {
@@ -80,27 +79,24 @@ export const allRoutes = [
   },
 ];
 
-
 export const homeRoutes = [
   {
     path: "/",
     element: <Projects />,
-    title: "项目", 
-    icon: <HomeIcon />,   
+    title: "项目",
+    icon: <HomeIcon />,
   },
   {
     path: "/projects",
     element: <Projects />,
-    title: "项目", 
-    icon: <HomeIcon />,   
+    title: "项目",
+    icon: <HomeIcon />,
   },
   {
-    path: "/projectsdetail",
-    element: <ProjectsDetail />,   
-    title: "项目", 
-    icon: <HomeIcon />,  
-    children: allRoutes
+    path: "/projectsdetail/:projectId",
+    element: <ProjectsDetail />,
+    title: "项目",
+    icon: <HomeIcon />,
+    children: allRoutes,
   },
 ];
-
-

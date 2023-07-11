@@ -18,19 +18,17 @@ import { Text } from "../components/Text";
 import { useParams } from "react-router-dom";
 
 export function Intro() {
-  const { projectId } = useParams();
- 
   const [tab, setTab] = useState(0);
   const { data: config } = useConfig();
- 
-  
-  // const targetProgram = config?.programs.find(program => program.id === projectId); // 找到目标 program 对象
-  // const programsId = config?.programs.findIndex(program => program.id === projectId) || 0;
- // 找到目标 program 对象在数组中的索引位置
-  const programsId=0;
+  const { projectId } = useParams();
+  const programsId =
+    config?.programs.findIndex((program) => program.id === projectId) || 0;
+
+  // 找到目标 program 对象在数组中的索引位置
+
   return (
     <>
-      <Box sx={{ borderBottom: 1, borderColor: "divider"}}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           <Tab label="项目概况" />
           <Tab label="人员组织" />
@@ -81,20 +79,21 @@ export function Intro() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {config?.programs[programsId]?.detail.beamData.map((data, index) => (
-                  <TableRow key={index}>
-                    <TableCell>{data.id}</TableCell>
-                    <TableCell>{data.long}</TableCell>
-                    <TableCell>{data.width}</TableCell>
-                    <TableCell>{data.width}</TableCell>
-                    <TableCell>{data.smallMile}</TableCell>
-                    <TableCell>{data.bigMile}</TableCell>
-                  </TableRow>
-                ))}
+                {config?.programs[programsId]?.detail.beamData.map(
+                  (data, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{data.id}</TableCell>
+                      <TableCell>{data.long}</TableCell>
+                      <TableCell>{data.width}</TableCell>
+                      <TableCell>{data.width}</TableCell>
+                      <TableCell>{data.smallMile}</TableCell>
+                      <TableCell>{data.bigMile}</TableCell>
+                    </TableRow>
+                  )
+                )}
               </TableBody>
             </Table>
           </TableContainer>
-       
         </Box>
       )}
       {tab === 3 && (
@@ -111,19 +110,20 @@ export function Intro() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {config?.programs[programsId]?.detail.cableData.map((data, index) => (
-                  <TableRow key={index}>
-                    <TableCell>{data.id}</TableCell>
-                    <TableCell>{data.elasticity}</TableCell>
-                    <TableCell>{data.vertical}</TableCell>
-                    <TableCell>{data.length}</TableCell>
-                    <TableCell>{data.force}</TableCell>
-                  </TableRow>
-                ))}
+                {config?.programs[programsId]?.detail.cableData.map(
+                  (data, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{data.id}</TableCell>
+                      <TableCell>{data.elasticity}</TableCell>
+                      <TableCell>{data.vertical}</TableCell>
+                      <TableCell>{data.length}</TableCell>
+                      <TableCell>{data.force}</TableCell>
+                    </TableRow>
+                  )
+                )}
               </TableBody>
             </Table>
           </TableContainer>
-       
         </Box>
       )}
     </>

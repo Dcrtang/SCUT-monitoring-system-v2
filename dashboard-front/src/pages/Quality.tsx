@@ -13,13 +13,15 @@ import {
   colors,
 } from "@mui/material";
 import { useState } from "react";
-import { getFileURL, useConfig } from "../api";
-import { Text } from "../components/Text";
+import {useConfig } from "../api";
+import { useParams } from "react-router-dom";
 
 export function Quality() {
   const [tab, setTab] = useState(0);
   const { data: config } = useConfig();
-  const programsId=0
+  const { projectId } = useParams();
+  const programsId =
+    config?.programs.findIndex((program) => program.id === projectId) || 0;
   return (
     <>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
