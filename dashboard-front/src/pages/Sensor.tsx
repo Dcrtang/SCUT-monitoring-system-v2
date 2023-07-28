@@ -1,12 +1,8 @@
-import {
-  Box,
-  Tabs,
-  Tab,
-} from "@mui/material";
+import { Box, Tabs, Tab } from "@mui/material";
 import { useState } from "react";
 import { useConfig } from "../api";
 import { useParams } from "react-router-dom";
-// import { MonitorData } from "../components/MonitorData";
+import PdfViewer from "../components/PdfViewer";
 
 export function Sensor() {
   const [tab, setTab] = useState(0);
@@ -20,7 +16,10 @@ export function Sensor() {
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           {config?.programs[programsId]?.sensor.name}
         </Tabs>
-        <div>上传文件</div>
+        <div>
+          pdf文件
+          <PdfViewer pdfUrl="../../demo.pdf" />
+        </div>
       </Box>
       {/* <MonitorData index={tab} /> */}
     </>

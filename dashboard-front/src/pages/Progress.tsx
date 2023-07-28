@@ -9,11 +9,15 @@ import {
 import { useState } from "react";
 import { Text } from "../components/Text";
 import { getFileURL, useConfig } from "../api";
+import { useParams } from "react-router-dom";
 
 export function Progress() {
   const [step, setStep] = useState(0);
   const { data: config } = useConfig();
-  const programsId=0
+  const { projectId } = useParams();
+  const programsId =
+    config?.programs.findIndex((program) => program.id === projectId) || 0;
+  // alert(config?.programs[programsId]?.progress);
   return (
     <>
       <FormControl>
@@ -35,7 +39,7 @@ export function Progress() {
         </Select>
       </FormControl>
       <Box>
-        model
+        <Box>{config?.programs[programsId]?.progress[step]?.model}</Box>
       </Box>
     </>
   );

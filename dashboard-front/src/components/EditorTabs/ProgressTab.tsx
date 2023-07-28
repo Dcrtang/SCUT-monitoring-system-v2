@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useMutation } from "react-query";
 import { setConfig, useConfig } from "../../api";
 import { Config } from "../../types";
-import { ImageSelector } from "../ImageSelector";
+import { PdfSelector } from "../PdfSelector";
 import * as uuid from "uuid";
 import { AutoTextField } from "../AutoTextField";
 
@@ -13,6 +13,7 @@ export function ProgressTab() {
   const [message, setMessage] = useState<string>();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const setConfigMutation = useMutation(setConfig);
+  const programsId=0;
 
   return (
     <Box sx={{ marginTop: "12px" }}>
@@ -22,11 +23,10 @@ export function ProgressTab() {
           variant="contained"
           onClick={() => {
             const newConfig = _.cloneDeep(config ?? {}) as Config;
-            newConfig.progress.splice(selectedIndex, 0, {
+            newConfig.programs[programsId]?.progress.splice(selectedIndex, 0, {
               id: uuid.v4(),
               name: "占位文本",
-              text: "占位文本",
-              img: "https://iph.href.lu/200x200?text=占位图片",
+              model: "https://iph.href.lu/200x200?text=占位图片",
             });
             setConfigMutation
               .mutateAsync(newConfig)
@@ -46,10 +46,10 @@ export function ProgressTab() {
         <Button
           variant="contained"
           color="error"
-          disabled={(config?.progress?.length ?? 0) <= 1}
+          disabled={(config?.programs[programsId]?.progress?.length ?? 0) <= 1}
           onClick={() => {
             const newConfig = _.cloneDeep(config ?? {}) as Config;
-            newConfig.progress.splice(selectedIndex, 1);
+            newConfig.programs[0]?.progress.splice(selectedIndex, 1);
             setConfigMutation
               .mutateAsync(newConfig)
               .then(() => {
@@ -66,7 +66,7 @@ export function ProgressTab() {
           删除
         </Button>
       </Box>
-      {config?.progress?.map((data, index) => (
+      {config?.programs[programsId]?.progress?.map((data, index) => (
         <Card
           key={data.id}
           sx={{
@@ -86,17 +86,17 @@ export function ProgressTab() {
             setSelectedIndex(index);
           }}
         >
-          <AutoTextField field={`progress[${index}].name`} label={"阶段名称"} />
-          <Box sx={{ height: "12px" }} />
+          <AutoTextField field={`programs[0].progress[${index}].name`} label={"阶段名称"} />
+          {/* <Box sx={{ height: "12px" }} />
           <AutoTextField
             multiline
-            field={`progress[${index}].text`}
-            label={`${config?.progress?.[index]?.name}进度说明`}
+            field={`programs[0].progress[${index}].text`}
+            label={`${config?.programs[0]?.progress?.[index]?.name}进度说明`}
           />
-          <Box sx={{ height: "12px" }} />
-          <ImageSelector
-            field={`progress[${index}].img`}
-            label={`${config?.progress?.[index]?.name}进度模型示意图`}
+          <Box sx={{ height: "12px" }} /> */}
+          <PdfSelector
+            field={`programs[0].progress[${index}].model`}
+            label={`${config?.programs[programsId]?.progress?.[index]?.name}进度模型示意图`}
           />
         </Card>
       ))}

@@ -36,12 +36,12 @@ export function ImageSelector(props: { field: string; label: string }) {
             uploadMutation
               .mutateAsync(file)
               .then((fileName) => {
-                setMessage("图片更新成功");
+                setMessage("文件更新成功");
                 const newConfig = _.cloneDeep(config ?? {});
                 _.set(newConfig, field, fileName);
                 return setConfigMutation.mutateAsync(newConfig);
               })
-              .catch(() => setMessage("图片更新失败"))
+              .catch(() => setMessage("文件更新失败"))
               .finally(() => {
                 refetch();
               });

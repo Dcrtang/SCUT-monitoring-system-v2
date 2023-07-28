@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useMutation } from "react-query";
 import { setConfig, useConfig } from "../../api";
 import { Config } from "../../types";
-import { ImageSelector } from "../ImageSelector";
+import { PdfSelector } from "../PdfSelector";
 import * as uuid from "uuid";
 import { AutoTextField } from "../AutoTextField";
 
@@ -13,7 +13,7 @@ export function QualityTab() {
   const [message, setMessage] = useState<string>();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const setConfigMutation = useMutation(setConfig);
-
+  const programsId=0;
   return (
     <Box sx={{ marginTop: "12px" }}>
       <Box sx={{ margin: "8px 0" }}>
@@ -22,11 +22,11 @@ export function QualityTab() {
           variant="contained"
           onClick={() => {
             const newConfig = _.cloneDeep(config ?? {}) as Config;
-            newConfig.quality.splice(selectedIndex, 0, {
+            newConfig.programs[programsId]?.quality.splice(selectedIndex, 0, {
               id: uuid.v4(),
               name: "占位文本",
-              img1: "https://iph.href.lu/200x200?text=占位图片",
-              img2: "https://iph.href.lu/200x200?text=占位图片",
+              elevation:{name:"占位文本",file:"占位url"},
+              cableForce:{name:"占位文本",file:"占位url"}
             });
             setConfigMutation
               .mutateAsync(newConfig)
@@ -46,10 +46,10 @@ export function QualityTab() {
         <Button
           variant="contained"
           color="error"
-          disabled={(config?.quality?.length ?? 0) <= 1}
+          disabled={(config?.programs[programsId]?.quality.length ?? 0) <= 1}
           onClick={() => {
             const newConfig = _.cloneDeep(config ?? {}) as Config;
-            newConfig.quality.splice(selectedIndex, 1);
+            newConfig.programs[programsId]?.quality.splice(selectedIndex, 1);
             setConfigMutation
               .mutateAsync(newConfig)
               .then(() => {
@@ -66,7 +66,7 @@ export function QualityTab() {
           删除
         </Button>
       </Box>
-      {config?.quality.map((data, index) => (
+      {config?.programs[programsId]?.quality.map((data, index) => (
         <Card
           key={data.id}
           sx={{
@@ -91,14 +91,14 @@ export function QualityTab() {
               display: "flex",
             }}
           >
-            <ImageSelector
+            <PdfSelector
               field={`quality[${index}].img1`}
-              label={`${config?.quality?.[index]?.name}数据图片`}
+              label={`${config?.programs[programsId]?.quality?.[index]?.elevation.name}安装标高验收pdf`}
             />
             <Box sx={{ width: "12px" }} />
-            <ImageSelector
+            <PdfSelector
               field={`quality[${index}].img2`}
-              label={`${config?.quality?.[index]?.name}模型图片`}
+              label={`${config?.programs[programsId]?.quality?.[index]?.cableForce.name}斜拉索pdf`}
             />
           </Box>
         </Card>

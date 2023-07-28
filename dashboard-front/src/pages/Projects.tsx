@@ -20,6 +20,7 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import { ArrowBack, Visibility, ListOutlined } from "@mui/icons-material";
+import HomeIcon from "@mui/icons-material/Home";
 import { Link, Route, useNavigate } from "react-router-dom";
 import { getFileURL, useConfig } from "../api";
 import { useRef } from "react";
@@ -55,9 +56,12 @@ export function Projects() {
             {/* 使用Box组件来添加固定的菜单列表 */}
             <Box
               sx={{
-                width: "18%",
+                width: "15%",
+                height:"100%",
                 backgroundColor: "#f5f5f5",
                 borderColor: "#2B3643",
+                display: "flex",
+                flexShrink: 0,
               }}
             >
               <List
@@ -73,7 +77,9 @@ export function Projects() {
                     sx={{ height: "100%", width: "100%" }}
                     selected={location.pathname === "/"}
                   >
-                    <ListItemIcon>{}</ListItemIcon>
+                    <ListItemIcon>
+                      <HomeIcon></HomeIcon>
+                    </ListItemIcon>
                     <ListItemText primary="我的项目" />
                   </ListItemButton>
                 </ListItem>
@@ -105,7 +111,7 @@ export function Projects() {
                   </Button>
                 </Grid>
               </Grid>
-              <Grid container spacing={3} sx={{ marginTop: 3, marginLeft: 2 }}>
+              <Grid container spacing={3} sx={{ marginTop: 3}}>
                 {config?.programs.map((project) => (
                   <Grid item xs={12} sm={6} md={3} key={project.id}>
                     <Card sx={{ height: "100%" }}>
@@ -116,7 +122,7 @@ export function Projects() {
                         <CardMedia
                           component="img"
                           height="140"
-                          image={project.intro.bridgeImg}
+                          image={getFileURL(project.intro.bridgeImg)}
                           alt={project.intro.name}
                         />
                         <CardContent>
@@ -141,7 +147,7 @@ export function Projects() {
                                 }}
                               />
                             </ListItem>
-                            <ListItem disablePadding sx={{ paddingLeft: 0 }}>
+                            <ListItem disablePadding sx={{ paddingLeft: 2 }}>
                               <ListItemIcon>
                                 <Typography
                                   variant="body2"

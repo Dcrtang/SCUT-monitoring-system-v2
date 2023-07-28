@@ -11,7 +11,7 @@ export interface Config {
       unit: string;
       inCharge: string;
       bridgeImg: string;
-    }
+    };
 
     detail: {
       situation: string;
@@ -23,7 +23,7 @@ export interface Config {
         name: string;
         postion: string;
         contactInfo: string;
-      }[]
+      }[];
 
       beamData: {
         id: string;
@@ -32,7 +32,7 @@ export interface Config {
         width: string;
         smallMile: string;
         bigMile: string;
-      }[]
+      }[];
 
       cableData: {
         id: string;
@@ -41,8 +41,8 @@ export interface Config {
         vertical: string;
         length: string;
         force: string;
-      }[]
-    }
+      }[];
+    };
 
     instructions: {
       id: string;
@@ -56,24 +56,24 @@ export interface Config {
     }[];
 
     quality: {
+      id: string;
+      name: string;
       elevation: {
-        id: string;
         name: string;
         file: string;
-      }[];
+      };
 
       cableForce: {
-        id: string;
         name: string;
         file: string;
-      }[]
-    };
+      };
+    }[];
 
     sensor: {
       name: string;
       file: string;
     };
-  }[]
+  }[];
 }
 
 export const defaultConfig: Config = {
@@ -143,30 +143,26 @@ export const defaultConfig: Config = {
         },
       ],
 
-      quality: {
-        elevation: [
-          {
-            id: 'F38CF419-A24F-48D3-858D-12940B56621F',
+      quality: [
+        {
+          id: 'F38CF419-A24F-48D3-858D-12940B56621F',
+          name:"",
+          elevation: {
             name: '占位文本',
             file: '占位文本',
           },
-        ],
 
-        cableForce: [
-          {
-            id: '3554850E-D6BC-000D-1708-F471164BC643',
+          cableForce: {
             name: '占位文本',
             file: '占位文本',
           },
-        ],
-      },
-
+        },
+      ],
 
       sensor: {
         name: '占位文本',
         file: '占位文本',
       },
-
     },
-  ]
+  ],
 };

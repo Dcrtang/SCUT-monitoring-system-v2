@@ -56,18 +56,18 @@ export interface Config {
     }[];
 
     quality: {
+      id: string;
+      name:string;
       elevation: {
-        id: string;
         name: string;
         file: string;
-      }[];
+      };
 
       cableForce: {
-        id: string;
         name: string;
         file: string;
-      }[]
-    };
+      }
+    }[];
 
     sensor: {
       name: string;

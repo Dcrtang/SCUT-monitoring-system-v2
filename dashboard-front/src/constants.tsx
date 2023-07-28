@@ -14,6 +14,7 @@ import { Instructions } from "./pages/Instructions";
 import { Quality } from "./pages/Quality";
 import { Projects } from "./pages/Projects";
 import { ProjectsDetail } from "./pages/ProjectsDetail";
+import { AdminDetail } from "./pages/AdminDetail";
 
 export const theme = createTheme({
   typography: {
@@ -71,12 +72,7 @@ export const allRoutes = [
     title: "应力传感器检测",
     icon: <AirplayIcon />,
   },
-  {
-    path: "admin",
-    element: <Admin />,
-    title: import.meta.env.DEV ? "管理" : undefined,
-    icon: <ManageAccountsIcon />,
-  },
+
 ];
 
 export const homeRoutes = [
@@ -92,6 +88,19 @@ export const homeRoutes = [
     title: "项目",
     icon: <HomeIcon />,
   },
+  {
+    path: "/admin",
+    element: <Admin />,
+    title: import.meta.env.DEV ? "管理" : undefined,
+    icon: <ManageAccountsIcon />,
+  },
+  {
+    path: "/admin/:projectId/admindetail",
+    element: <AdminDetail/>,
+    title: "管理详情页",
+    icon: <ManageAccountsIcon />,
+  },
+
   {
     path: "/projectsdetail/:projectId",
     element: <ProjectsDetail />,

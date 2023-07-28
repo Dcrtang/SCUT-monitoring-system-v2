@@ -12,10 +12,10 @@ import {
   colors,
   ListItemIcon,
 } from "@mui/material";
-import {  useLocation, useNavigate, Outlet, useParams } from "react-router-dom";
+import { useLocation, useNavigate, Outlet, useParams } from "react-router-dom";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { allRoutes ,theme } from "../constants";
-import {  useRef } from "react";
+import { allRoutes, theme } from "../constants";
+import { useRef } from "react";
 import { useConfig } from "../api";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -31,14 +31,21 @@ export function ProjectsDetail() {
   const navBarRef = useRef<HTMLDivElement>();
   const { data: config } = useConfig();
   const { projectId } = useParams();
- 
+
   return (
     <>
       <CssBaseline />
       <ReactQueryDevtools />
       <ThemeProvider theme={theme}>
-        <Box sx={{ display: "flex", flexDirection: "column", height: "100%" ,width:"100%"}}>
-          <Box component="div" ref={navBarRef} sx={{width:"100%"}}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            width: "100%",
+          }}
+        >
+          <Box component="div" ref={navBarRef} sx={{ width: "100%" }}>
             <AppBar position="static">
               <Toolbar>
                 <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
@@ -54,32 +61,29 @@ export function ProjectsDetail() {
               height: "calc(100vh - 64px)",
             }}
           >
-            <Box sx={{ width: "18%", height: "100%", flexShrink: 0 }}>
+            <Box sx={{ width: "15%", height: "100%", flexShrink: 0 }}>
               <List sx={{ backgroundColor: colors.grey[100], height: "100%" }}>
-                {[...allRoutes, defaultInsertRoute].map((route) =>
+                {[defaultInsertRoute,...allRoutes].map((route) =>
                   route.title ? (
                     <ListItem
                       key={route.path}
                       disablePadding
                       sx={{ height: "8%" }}
                     >
-                      
                       <ListItemButton
                         sx={{ height: "100%" }}
-                        
-                        selected={location.pathname === `/projectsdetail/${projectId}/${route.path}`}
-                  
+                        selected={
+                          location.pathname ===
+                          `/projectsdetail/${projectId}/${route.path}`
+                        }
                         onClick={() => {
                           navigate(route.path);
                         }}
                       >
-               
                         <ListItemIcon>{route.icon}</ListItemIcon>
                         <ListItemText primary={route.title} />
                       </ListItemButton>
-                      
                     </ListItem>
-                    
                   ) : null
                 )}
               </List>
@@ -92,15 +96,11 @@ export function ProjectsDetail() {
                 overflowY: "scroll",
               }}
             >
-              
               <Outlet />
             </Box>
           </Box>
         </Box>
       </ThemeProvider>
     </>
-    
   );
 }
-
-

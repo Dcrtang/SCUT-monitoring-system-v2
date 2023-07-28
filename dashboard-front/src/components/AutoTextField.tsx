@@ -35,6 +35,7 @@ export function AutoTextField(props: {
           setMessage("更新字段成功");
         })
         .catch(() => {
+          alert(field);
           setMessage("更新字段失败");
         })
         .finally(() => {

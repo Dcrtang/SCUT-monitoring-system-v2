@@ -11,6 +11,11 @@ import {
   TableHead,
   TableRow,
   colors,
+  Grid,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
 } from "@mui/material";
 import { useState } from "react";
 import { getFileURL, useConfig } from "../api";
@@ -28,6 +33,62 @@ export function Intro() {
 
   return (
     <>
+      <div style={{ display: "flex" }}>
+        <Box padding={"5px"}>
+          {" "}
+          <img
+            src={getFileURL(config?.programs[programsId]?.intro.bridgeImg)}
+            alt="你好"
+            height={"100px"}
+          />
+        </Box>
+        <Box padding={"5px"}>
+          <List dense>
+            <ListItem disablePadding sx={{ paddingLeft: 0 }}>
+              <ListItemIcon>
+                <Typography variant="body2" sx={{ fontSize: 12 }}>
+                  桥梁类型：
+                </Typography>
+              </ListItemIcon>
+              <ListItemText
+                primary={config?.programs[programsId]?.intro.type}
+                primaryTypographyProps={{
+                  variant: "body2",
+                  sx: { fontSize: 12 },
+                }}
+              />
+            </ListItem>
+            <ListItem disablePadding sx={{ paddingLeft: 0 }}>
+              <ListItemIcon>
+                <Typography variant="body2" sx={{ fontSize: 12 }}>
+                  状态：
+                </Typography>
+              </ListItemIcon>
+              <ListItemText
+                primary={config?.programs[programsId]?.intro.status}
+                primaryTypographyProps={{
+                  variant: "body2",
+                  sx: { fontSize: 12 },
+                }}
+              />
+            </ListItem>
+            <ListItem disablePadding sx={{ paddingLeft: 0 }}>
+              <ListItemIcon>
+                <Typography variant="body2" sx={{ fontSize: 12 }}>
+                  建设单位：
+                </Typography>
+              </ListItemIcon>
+              <ListItemText
+                primary={config?.programs[programsId]?.intro.unit}
+                primaryTypographyProps={{
+                  variant: "body2",
+                  sx: { fontSize: 12 },
+                }}
+              />
+            </ListItem>
+          </List>
+        </Box>
+      </div>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           <Tab label="项目概况" />
@@ -40,6 +101,7 @@ export function Intro() {
         <>
           <Text>{config?.programs[programsId]?.detail?.situation}</Text>
           <Box sx={{ height: "5%" }} />
+
           <div>model</div>
         </>
       )}
