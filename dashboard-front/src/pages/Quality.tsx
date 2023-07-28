@@ -2,23 +2,15 @@ import {
   Box,
   Tabs,
   Tab,
-  Typography,
-  TableContainer,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  colors,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
 } from "@mui/material";
 import { useState } from "react";
-import { useConfig } from "../api";
+import { getFileURL, useConfig } from "../api";
 import { useParams } from "react-router-dom";
+import PdfViewer from "../components/PdfViewer";
 
 export function Quality() {
   const [tab, setTab] = useState(0);
@@ -55,6 +47,13 @@ export function Quality() {
       </Box>
       {tab === 0 && (
         <>
+          <PdfViewer
+            pdfUrl={
+              getFileURL(
+                config?.programs[programsId]?.quality[step]?.elevation.file
+              ) || ""
+            }
+          />
           {config?.programs[programsId]?.quality[step]?.elevation.file}
           {/* <TableContainer sx={{ maxHeight: 440 }}>
             <Table stickyHeader aria-label="sticky table">
@@ -95,6 +94,13 @@ export function Quality() {
       )}
       {tab === 1 && (
         <>
+          <PdfViewer
+            pdfUrl={
+              getFileURL(
+                config?.programs[programsId]?.quality[step]?.cableForce.file
+              ) || ""
+            }
+          />
           {config?.programs[programsId]?.quality[step]?.cableForce.file}
 
           {/* <TableContainer sx={{ maxHeight: 440 }}>

@@ -1,6 +1,6 @@
 import { Box, Tabs, Tab } from "@mui/material";
 import { useState } from "react";
-import { useConfig } from "../api";
+import { getFileURL, useConfig } from "../api";
 import { useParams } from "react-router-dom";
 import PdfViewer from "../components/PdfViewer";
 
@@ -18,7 +18,7 @@ export function Sensor() {
         </Tabs>
         <div>
           pdf文件
-          <PdfViewer pdfUrl="../../demo.pdf" />
+          <PdfViewer pdfUrl={getFileURL(config?.programs[programsId]?.sensor.file)|| ""}/>
         </div>
       </Box>
       {/* <MonitorData index={tab} /> */}

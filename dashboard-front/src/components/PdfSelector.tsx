@@ -18,14 +18,15 @@ export function PdfSelector(props: { field: string; label: string }) {
   const [message, setMessage] = useState<string>();
   const uploadMutation = useMutation(upload);
 
-  const Img = useMemo(
+  const pdf = useMemo(
     () => getFileURL(_.get(config, field) as string),
     [config, field]
   );
   return (
     <Box>
       <Box sx={{ width: "300px", height: "300px" }}>
-        {/* <PdfViewer pdfUrl={pdf} /> */}
+        {/* <PdfViewer style={{ width: "100%", height: "100%" }} pdfUrl={pdf} /> */}
+        <h1>{pdf}</h1>
       </Box>
       <FormControl variant="standard">
         <Input

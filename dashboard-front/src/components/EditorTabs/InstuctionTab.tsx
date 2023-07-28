@@ -89,8 +89,8 @@ export function InstructionTab() {
           }}
         >
           <PdfSelector
-            field={`programs[0].instructions[${index}].flie`}
-            label={`工程质量管理文件${index + 1}`}
+            field={`programs[${programsId}].instructions[${index}].flie`}
+            label={`指令下发文件${index + 1}`}
           />
         </Card>
       ))}

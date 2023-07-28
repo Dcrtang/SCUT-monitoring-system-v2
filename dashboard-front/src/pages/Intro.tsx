@@ -35,7 +35,7 @@ export function Intro() {
     <>
       <div style={{ display: "flex" }}>
         <Box padding={"5px"}>
-          {" "}
+          
           <img
             src={getFileURL(config?.programs[programsId]?.intro.bridgeImg)}
             alt="你好"

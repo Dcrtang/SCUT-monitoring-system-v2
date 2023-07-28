@@ -1,1 +1,360 @@
-{"title":"桥梁信息监控平台","programs":[{"id":"c98ba75e-b139-47a2-a0a4-1723e2246cc6","intro":{"name":"占位文本","type":"占位文本","status":"占位文本","unit":"占位文本","inCharge":"占位文本","bridgeImg":"https://iph.href.lu/200x200?text=占位图片"},"detail":{"situation":"占位文本","model":"占位文本","members":[{"id":"89716C45-5746-3386-DC89-BB0E00479619","index":"占位文本","name":"占位文本","postion":"占位文本","contactInfo":"占位文本"}],"beamData":[{"id":"90D5D563-6ABD-713A-2D72-4E61D0F5E281","index":"占位文本","long":"占位文本","width":"占位文本","smallMile":"占位文本","bigMile":"占位文本"}],"cableData":[{"id":"096568BF-85A1-9BE2-823F-66B2F4F83DB2","index":"占位文本","elasticity":"占位文本","vertical":"占位文本","length":"占位文本","force":"占位文本"}]},"instructions":[{"id":"2517F526-F393-4BDA-B87E-D631E0CC8B27","file":"占位文本"}],"progress":[{"id":"A68B5F56-B53B-AD53-E5C2-11911CB9F7C6","name":"占位文本","model":"占位文本"}],"quality":[{"id":"F38CF419-A24F-48D3-858D-12940B56621F","name":"","elevation":{"name":"占位文本","file":"占位文本"},"cableForce":{"name":"占位文本","file":"占位文本"}}],"sensor":{"name":"占位文本","file":"占位文本"}},{"id":"2","intro":{"name":"Program 2","type":"Type B","status":"Completed","unit":"Unit 2","inCharge":"Jane Smith","bridgeImg":"175ef838-2727-4e59-a584-9a53de2d04b8.jpg"},"detail":{"situation":"Situation 2","model":"Model 2","members":[{"id":"1","index":"1","name":"Member 1","position":"Position 1","contactInfo":"member1@example.com"},{"id":"2","index":"2","name":"Member 2","position":"Position 2","contactInfo":"member2@example.com"},{"id":"215bd601-d8a4-43f0-bcc0-58e97adf2ac6","index":"序号","name":"占位文本","postion":"占位文本","contactInfo":"占位文本"},{"id":"addbda05-dd0d-499d-9a48-ae106e2819e5","index":"序号","name":"占位文本","postion":"占位文本","contactInfo":"占位文本"},{"id":"af7b6633-28a5-4093-8213-dae0b879a9a3","index":"序号","name":"占位文本","postion":"占位文本","contactInfo":"占位文本"},{"id":"65fcbfe7-92f6-4dc9-91d7-c793917463d6","index":"序号","name":"占位文本","postion":"占位文本","contactInfo":"占位文本"}],"beamData":[{"id":"1","index":"1","long":"8","width":"4","smallMile":"1","bigMile":"3"},{"id":"2","index":"2","long":"10","width":"5","smallMile":"2","bigMile":"4"},{"id":"9ee1c3ae-b7d2-4056-ad03-885f6e73ad8c","index":"占位文本","long":"占位文本","width":"占位文本","smallMile":"占位文本","bigMile":"占位文本"}],"cableData":[{"id":"1","index":"1","elasticity":"80","vertical":"40","length":"18","force":"25"},{"id":"2","index":"2","elasticity":"100","vertical":"50","length":"20","force":"30"},{"id":"a3c52d71-168d-4be1-973f-bca4074715d4","index":"占位文本","elasticity":"占位文本","vertical":"占位文本","length":"占位文本","force":"占位文本"}]},"instructions":[{"id":"b01307c6-951f-4d8e-89ad-79321e7c32ec","file":"https://iph.href.lu/200x200?text=占位图片","flie":"60fcb690-017b-435c-9d3f-d5da6e641649.pdf"},{"id":"1","file":"D:/RL_ReconmSystem/3535101.pdf"},{"id":"2","file":"instruction2.pdf"}],"progress":[{"id":"1","name":"Progress 1","model":"302987b3-5bf1-4150-81ec-066a626d6a7e.pdf"},{"id":"2","name":"Progress 2","model":"Model 2"}],"quality":[{"id":"1","name":"quality1","elevation":{"name":"Elevation 2","file":"elevation2.jpg"},"cableForce":{"name":"Cable Force 2","file":"cableforce1.jpg"}},{"id":"2","name":"quality2","elevation":{"name":"Elevation 2","file":"elevation2.jpg"},"cableForce":{"name":"Cable Force 2","file":"cableforce2.jpg"}}],"sensor":{"name":"Sensor 2","file":"6bd549cc-4722-4d45-8368-0d16e2f5fb2b.pdf"}},{"id":"64484c62-371b-40b4-a12a-d2c56a42a3b4","intro":{"name":"programs1","type":"占位文本","status":"占位文本","unit":"占位文本","inCharge":"占位文本","bridgeImg":"531c408f-4b3d-44eb-b2e1-a39a71c6393a.png"},"detail":{"situation":"这是一个桥梁项目","model":"占位文本","members":[{"id":"89716C45-5746-3386-DC89-BB0E00479619","index":"1","name":"好姑娘热火","postion":"占位文本","contactInfo":"12432544","position":"老板"},{"id":"b74d1156-d7eb-40a4-8e81-d06bb709c256","index":"2","name":"占位文本","postion":"占位文本","contactInfo":"占位文本"}],"beamData":[{"id":"90D5D563-6ABD-713A-2D72-4E61D0F5E281","index":"1","long":"235","width":"235","smallMile":"2135","bigMile":"23"}],"cableData":[{"id":"096568BF-85A1-9BE2-823F-66B2F4F83DB2","index":"占位文本","elasticity":"占位文本","vertical":"占位文本","length":"占位文本","force":"占位文本"}]},"instructions":[{"id":"2517F526-F393-4BDA-B87E-D631E0CC8B27","file":"占位文本"}],"progress":[{"id":"A68B5F56-B53B-AD53-E5C2-11911CB9F7C6","name":"占位文本","model":"占位文本"}],"quality":[{"id":"F38CF419-A24F-48D3-858D-12940B56621F","name":"","elevation":{"name":"占位文本","file":"占位文本"},"cableForce":{"name":"占位文本","file":"占位文本"}}],"sensor":{"name":"占位文本","file":"占位文本"}},{"id":"423265c5-0b7e-472b-900d-41a0ae52a747","intro":{"name":"programs3","type":"占位文本","status":"占位文本","unit":"占位文本","inCharge":"占位文本","bridgeImg":"3dc0957a-d502-4400-a722-939c85dc44c5.jpg"},"detail":{"situation":"这是第三个桥梁项目","model":"占位文本","members":[{"id":"89716C45-5746-3386-DC89-BB0E00479619","index":"占位文本","name":"占位文本","postion":"占位文本","contactInfo":"占位文本"}],"beamData":[{"id":"90D5D563-6ABD-713A-2D72-4E61D0F5E281","index":"占位文本","long":"占位文本","width":"占位文本","smallMile":"占位文本","bigMile":"占位文本"}],"cableData":[{"id":"096568BF-85A1-9BE2-823F-66B2F4F83DB2","index":"占位文本","elasticity":"占位文本","vertical":"占位文本","length":"占位文本","force":"占位文本"}]},"instructions":[{"id":"2517F526-F393-4BDA-B87E-D631E0CC8B27","file":"占位文本"}],"progress":[{"id":"A68B5F56-B53B-AD53-E5C2-11911CB9F7C6","name":"占位文本","model":"占位文本"}],"quality":[{"id":"F38CF419-A24F-48D3-858D-12940B56621F","name":"","elevation":{"name":"占位文本","file":"占位文本"},"cableForce":{"name":"占位文本","file":"占位文本"}}],"sensor":{"name":"占位文本","file":"占位文本"}}],"sensor":{"name":"name"},"intro":{"text":"项目B"},"quality":[{"name":"第一阶段","img1":"4dc18ca1-0400-4b5d-bb95-1a4ac4a6b892.pdf"},{"name":"第二阶段"}]}
+{
+  "title": "桥梁信息监控平台",
+  "programs": [
+    {
+      "id": "D960AF9C-5261-B66E-87A6-9926F7ADCFCF",
+      "intro": {
+        "name": "占位文本",
+        "type": "占位文本",
+        "status": "占位文本",
+        "unit": "占位文本",
+        "inCharge": "占位文本",
+        "bridgeImg": "6b8f8994-b846-45cd-aabf-a8db547e3fc1.jpg"
+      },
+      "detail": {
+        "situation": "占位文本",
+        "model": "占位文本",
+        "members": [
+          {
+            "id": "89716C45-5746-3386-DC89-BB0E00479619",
+            "index": "占位文本",
+            "name": "占位文本",
+            "postion": "占位文本",
+            "contactInfo": "占位文本"
+          }
+        ],
+        "beamData": [
+          {
+            "id": "90D5D563-6ABD-713A-2D72-4E61D0F5E281",
+            "index": "占位文本",
+            "long": "占位文本",
+            "width": "占位文本",
+            "smallMile": "占位文本",
+            "bigMile": "占位文本"
+          }
+        ],
+        "cableData": [
+          {
+            "id": "096568BF-85A1-9BE2-823F-66B2F4F83DB2",
+            "index": "占位文本",
+            "elasticity": "占位文本",
+            "vertical": "占位文本",
+            "length": "占位文本",
+            "force": "占位文本"
+          }
+        ]
+      },
+      "instructions": [
+        {
+          "id": "2517F526-F393-4BDA-B87E-D631E0CC8B27",
+          "file": "占位文本",
+          "flie": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf"
+        },
+        { "flie": "ba48b8e2-e941-480c-b910-788fde49522a.pdf" }
+      ],
+      "progress": [
+        {
+          "id": "A68B5F56-B53B-AD53-E5C2-11911CB9F7C6",
+          "name": "占位文本",
+          "model": "占位文本"
+        }
+      ],
+      "quality": [
+        {
+          "id": "0608a3b3-c56d-4c2f-a6d9-fd1a24e09bba",
+          "name": "占位文本",
+          "elevation": { "name": "占位文本", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" },
+          "cableForce": { "name": "占位文本", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+        },
+        {
+          "id": "F38CF419-A24F-48D3-858D-12940B56621F",
+          "name": "",
+          "elevation": { "name": "占位文本", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" },
+          "cableForce": { "name": "占位文本", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+        }
+      ],
+      "sensor": { "name": "占位文本", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+    },
+    {
+      "id": "D960AF9C-5261-B66E-87A6-9926F7ADCFCF",
+      "intro": {
+        "name": "占位文本",
+        "type": "占位文本",
+        "status": "占位文本",
+        "unit": "占位文本",
+        "inCharge": "占位文本",
+        "bridgeImg": "占位文本"
+      },
+      "detail": {
+        "situation": "占位文本",
+        "model": "占位文本",
+        "members": [
+          {
+            "id": "89716C45-5746-3386-DC89-BB0E00479619",
+            "index": "占位文本",
+            "name": "占位文本",
+            "postion": "占位文本",
+            "contactInfo": "占位文本"
+          }
+        ],
+        "beamData": [
+          {
+            "id": "90D5D563-6ABD-713A-2D72-4E61D0F5E281",
+            "index": "占位文本",
+            "long": "占位文本",
+            "width": "占位文本",
+            "smallMile": "占位文本",
+            "bigMile": "占位文本"
+          }
+        ],
+        "cableData": [
+          {
+            "id": "096568BF-85A1-9BE2-823F-66B2F4F83DB2",
+            "index": "占位文本",
+            "elasticity": "占位文本",
+            "vertical": "占位文本",
+            "length": "占位文本",
+            "force": "占位文本"
+          }
+        ]
+      },
+      "instructions": [
+        { "id": "2517F526-F393-4BDA-B87E-D631E0CC8B27", "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf" }
+      ],
+      "progress": [
+        {
+          "id": "A68B5F56-B53B-AD53-E5C2-11911CB9F7C6",
+          "name": "占位文本",
+          "model": "占位文本"
+        }
+      ],
+      "quality": [
+        {
+          "id": "F38CF419-A24F-48D3-858D-12940B56621F",
+          "name": "",
+          "elevation": { "name": "占位文本", "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf" },
+          "cableForce": { "name": "占位文本", "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf" }
+        }
+      ],
+      "sensor": { "name": "占位文本", "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf" }
+    },
+    {
+      "id": "1",
+      "intro": {
+        "name": "Program 1",
+        "type": "Type A",
+        "status": "In Progress",
+        "unit": "Unit 1",
+        "inCharge": "John Doe",
+        "bridgeImg": "771a2396-b95b-4e00-8808-5115f8c03890.png"
+      },
+      "detail": {
+        "situation": "Situation 1",
+        "model": "Model 1",
+        "members": [
+          {
+            "id": "1",
+            "index": "1",
+            "name": "Member 1",
+            "position": "Position 1",
+            "contactInfo": "member1@example.com"
+          },
+          {
+            "id": "2",
+            "index": "2",
+            "name": "Member 2",
+            "position": "Position 2",
+            "contactInfo": "member2@example.com"
+          },
+          {
+            "id": "4bf4c7e3-fd42-43f7-b4b8-fb4d2a226a45",
+            "index": "3",
+            "name": "占位文本",
+            "postion": "占位文本",
+            "contactInfo": "占位文本"
+          }
+        ],
+        "beamData": [
+          {
+            "id": "1",
+            "index": "1",
+            "long": "10",
+            "width": "5",
+            "smallMile": "2",
+            "bigMile": "4"
+          },
+          {
+            "id": "2",
+            "index": "2",
+            "long": "12",
+            "width": "6",
+            "smallMile": "3",
+            "bigMile": "5"
+          },
+          {
+            "id": "edb6b6f0-399d-425d-b75e-737580c38511",
+            "index": "3",
+            "long": "15",
+            "width": "7",
+            "smallMile": "4",
+            "bigMile": "6"
+          }
+        ],
+        "cableData": [
+          {
+            "id": "1",
+            "index": "1",
+            "elasticity": "100",
+            "vertical": "50",
+            "length": "20",
+            "force": "30"
+          },
+          {
+            "id": "2",
+            "index": "2",
+            "elasticity": "120",
+            "vertical": "60",
+            "length": "22",
+            "force": "35"
+          }
+        ]
+      },
+      "instructions": [
+        {
+          "id": "1313e622-6693-49e7-a0fa-ff1791a607ea",
+          "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf",
+          "flie": "91b5744e-2970-4b9d-8d43-ae529e2fb803.pdf"
+        },
+        {
+          "id": "2",
+          "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf",
+          "flie": "1d8b2a30-26e9-4c25-8f6f-6b215d909e95.pdf"
+        }
+      ],
+      "progress": [
+        {
+          "id": "1",
+          "name": "Progress 1",
+          "model": "03882bfc-a92b-43eb-916a-86cd78eca21d.pdf"
+        },
+        {
+          "id": "2",
+          "name": "Progress 2",
+          "model": "659e35b7-2d04-4fcc-a011-e33ccda2ff02.pdf"
+        }
+      ],
+      "quality": [
+        {
+          "id": "1",
+          "name": "quality1",
+          "elevation": { "name": "Elevation 1", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" },
+          "cableForce": { "name": "Cable Force 1", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+        },
+        {
+          "id": "2",
+          "name": "quality2",
+          "elevation": { "name": "Elevation 2", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" },
+          "cableForce": { "name": "Cable Force 2", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+        }
+      ],
+      "sensor": { "name": "Sensor 1", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+    },
+    {
+      "id": "2",
+      "intro": {
+        "name": "Program 2",
+        "type": "Type B",
+        "status": "Completed",
+        "unit": "Unit 2",
+        "inCharge": "Jane Smith",
+        "bridgeImg": "175ef838-2727-4e59-a584-9a53de2d04b8.jpg"
+      },
+      "detail": {
+        "situation": "Situation 2",
+        "model": "Model 2",
+        "members": [
+          {
+            "id": "1",
+            "index": "1",
+            "name": "Member 1",
+            "position": "Position 1",
+            "contactInfo": "member1@example.com"
+          },
+          {
+            "id": "2",
+            "index": "2",
+            "name": "Member 2",
+            "position": "Position 2",
+            "contactInfo": "member2@example.com"
+          }
+        ],
+        "beamData": [
+          {
+            "id": "1",
+            "index": "1",
+            "long": "8",
+            "width": "4",
+            "smallMile": "1",
+            "bigMile": "3"
+          },
+          {
+            "id": "2",
+            "index": "2",
+            "long": "10",
+            "width": "5",
+            "smallMile": "2",
+            "bigMile": "4"
+          }
+        ],
+        "cableData": [
+          {
+            "id": "1",
+            "index": "1",
+            "elasticity": "80",
+            "vertical": "40",
+            "length": "18",
+            "force": "25"
+          },
+          {
+            "id": "2",
+            "index": "2",
+            "elasticity": "100",
+            "vertical": "50",
+            "length": "20",
+            "force": "30"
+          }
+        ]
+      },
+      "instructions": [
+        {
+          "id": "b01307c6-951f-4d8e-89ad-79321e7c32ec",
+          "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf"
+        },
+        { "id": "1", "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf" },
+        { "id": "2", "file": "709bc32f-fd9a-4c2d-8a0d-5092f7f371e3.pdf" }
+      ],
+      "progress": [
+        { "id": "1", "name": "Progress 1", "model": "Model 1" },
+        { "id": "2", "name": "Progress 2", "model": "Model 2" }
+      ],
+      "quality": [
+        {
+          "id": "1",
+          "name": "quality1",
+          "elevation": { "name": "Elevation 2", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" },
+          "cableForce": { "name": "Cable Force 2", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+        },
+        {
+          "id": "2",
+          "name": "quality2",
+          "elevation": { "name": "Elevation 2", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" },
+          "cableForce": { "name": "Cable Force 2", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+        }
+      ],
+      "sensor": { "name": "Sensor 2", "file": "d557d9db-e16f-443c-932f-905923c46cb7.pdf" }
+    }
+  ],
+  "sensor": { "name": "name" },
+  "intro": { "text": "项目B" },
+  "quality": [{ "name": "第一阶段" }, { "name": "第二阶段" }]
+}
