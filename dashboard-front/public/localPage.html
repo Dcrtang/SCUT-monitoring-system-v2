@@ -1,0 +1,23 @@
+<!-- localPage.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Page</title>
+</head>
+<body>
+  <h1>Welcome to Local Page</h1>
+  <p>This is an example HTML page.</p>
+  <div id="parameterDisplay"></div>
+
+  <script>
+    // 从URL查询参数获取传递的参数值
+    const urlParams = new URLSearchParams(window.location.search);
+    const parameterValue = urlParams.get('parameter');
+
+    // 在页面中显示传递的参数值
+    const parameterDisplay = document.getElementById('parameterDisplay');
+    parameterDisplay.textContent = `Parameter: ${parameterValue}`;
+  </script>
+</body>
+</html>
