@@ -5,21 +5,20 @@ import { useParams } from "react-router-dom";
 import PdfViewer from "../components/PdfViewer";
 
 export function Sensor() {
-  const [tab, setTab] = useState(0);
   const { data: config } = useConfig();
   const { projectId } = useParams();
   const programsId =
     config?.programs.findIndex((program) => program.id === projectId) || 0;
   return (
     <>
-      <Box sx={{ borderBottom: 1, borderColor: "divider", marginBottom: 1 }}>
-        <Tabs value={tab} onChange={(e, v) => setTab(v)}>
-          {config?.programs[programsId]?.sensor.name}
-        </Tabs>
-        <div>
-          pdf文件
-          <PdfViewer pdfUrl={getFileURL(config?.programs[programsId]?.sensor.file)|| ""}/>
-        </div>
+      <Box sx={{ borderBottom: 2, borderColor: "divider", marginBottom: 1 }}>
+        应力pdf文件
+        <h1> {config?.programs[programsId]?.sensor.name}</h1>
+        <Box sx={{ justifyContent: "center" ,alignItems:"center"}}>
+          <PdfViewer
+            pdfUrl={getFileURL(config?.programs[programsId]?.sensor.file) || ""}
+          />
+        </Box>
       </Box>
       {/* <MonitorData index={tab} /> */}
     </>

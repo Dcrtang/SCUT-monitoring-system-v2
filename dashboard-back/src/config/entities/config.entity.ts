@@ -21,7 +21,7 @@ export interface Config {
         id: string;
         index: string;
         name: string;
-        postion: string;
+        position: string;
         contactInfo: string;
       }[];
 
@@ -46,6 +46,7 @@ export interface Config {
 
     instructions: {
       id: string;
+      name:string;
       file: string;
     }[];
 
@@ -100,7 +101,7 @@ export const defaultConfig: Config = {
             id: '89716C45-5746-3386-DC89-BB0E00479619',
             index: '占位文本',
             name: '占位文本',
-            postion: '占位文本',
+            position: '占位文本',
             contactInfo: '占位文本',
           },
         ],
@@ -131,6 +132,7 @@ export const defaultConfig: Config = {
       instructions: [
         {
           id: '2517F526-F393-4BDA-B87E-D631E0CC8B27',
+          name: '占位文本',
           file: '占位文本',
         },
       ],
@@ -146,7 +148,7 @@ export const defaultConfig: Config = {
       quality: [
         {
           id: 'F38CF419-A24F-48D3-858D-12940B56621F',
-          name:"",
+          name: '',
           elevation: {
             name: '占位文本',
             file: '占位文本',

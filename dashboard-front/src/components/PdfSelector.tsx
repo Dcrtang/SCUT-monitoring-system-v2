@@ -30,6 +30,7 @@ export function PdfSelector(props: { field: string; label: string }) {
       </Box>
       <FormControl variant="standard">
         <Input
+          
           type="file"
           componentsProps={{ input: { accept: ".pdf" } }}
           onChange={(e) => {

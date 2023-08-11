@@ -21,7 +21,7 @@ export interface Config {
         id: string;
         index: string;
         name: string;
-        postion: string;
+        position: string;
         contactInfo: string;
       }[]
 
@@ -46,6 +46,7 @@ export interface Config {
 
     instructions: {
       id: string;
+      name:string;
       file: string;
     }[];
 

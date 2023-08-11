@@ -13,13 +13,14 @@ import {
   AppBar,
   Toolbar,
   Typography,
+  Card,
 } from "@mui/material";
 import * as uuid from "uuid";
 import { useContext, useEffect, useRef, useState } from "react";
 import { DataEditor } from "../components/DataEditor";
 import { PdfSelector } from "../components/PdfSelector";
 import { AutoTextField } from "../components/AutoTextField";
-import { InstructionTab } from "../components/EditorTabs/InstuctionTab";
+import { InstructionTab } from "../components/EditorTabs/InstructionTab";
 import { SensorTab } from "../components/EditorTabs/SensorTab";
 import { ProgressTab } from "../components/EditorTabs/ProgressTab";
 import { QualityTab } from "../components/EditorTabs/QualityTab";
@@ -83,7 +84,7 @@ export function AdminDetail() {
           <Box
             sx={{
               width: "10%",
-              height:"100%",
+              height: "100%",
               backgroundColor: "#f5f5f5",
               borderColor: "#2B3643",
               display: "flex",
@@ -127,22 +128,54 @@ export function AdminDetail() {
               </Box>
               {tab === 0 && (
                 <>
-                  <AutoTextField
-                    field={`programs[${programsId}].intro.name`}
-                    label="项目名称"
-                    fullwidth
-                  />
-                  <AutoTextField
-                    field={`programs[${programsId}].detail.situation`}
-                    label="项目概况文本"
-                    multiline
-                    fullwidth
-                  />
-                  <Box sx={{ height: "12px" }} />
-                  <ImageSelector
-                    field={`programs[${programsId}].intro.bridgeImg`}
-                    label="项目概况图片"
-                  />
+                  <Typography variant="h6" component="div">
+                    项目介绍
+                  </Typography>
+
+                  <Card sx={{ margin: "12px 0", padding: "24px" }}>
+                    <AutoTextField
+                      field={`programs[${programsId}].intro.name`}
+                      label="项目名称"
+                      fullwidth
+                    />
+                    <AutoTextField
+                      field={`programs[${programsId}].detail.situation`}
+                      label="项目概况文本"
+                      multiline
+                      fullwidth
+                    />
+                    <Box
+                      sx={{
+                        display: "flex",
+                      }}
+                    >
+                      <AutoTextField
+                        field={`programs[${programsId}].intro.type`}
+                        label="桥梁类型"
+                        multiline
+                        fullwidth
+                      />
+                      <Box sx={{ width: "100px" }} />
+                      <AutoTextField
+                        field={`programs[${programsId}].intro.status`}
+                        label="状态"
+                        multiline
+                        fullwidth
+                      />
+                      <Box sx={{ width: "100px" }} />
+                      <AutoTextField
+                        field={`programs[${programsId}].intro.unit`}
+                        label="建设单位"
+                        multiline
+                        fullwidth
+                      />
+                    </Box>
+                    <Box sx={{ height: "12px" }} />
+                    <ImageSelector
+                      field={`programs[${programsId}].intro.bridgeImg`}
+                      label="项目概况图片"
+                    />
+                  </Card>
                   <Box sx={{ height: "36px" }} />
                   <DataEditor
                     field={`programs[${programsId}].detail.members`}
@@ -175,9 +208,9 @@ export function AdminDetail() {
                     ]}
                     generateNewRow={() => ({
                       id: uuid.v4(),
-                      index: "序号",
+                      index: "占位文本",
                       name: "占位文本",
-                      postion: "占位文本",
+                      position: "占位文本",
                       contactInfo: "占位文本",
                     })}
                   />

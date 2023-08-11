@@ -171,7 +171,7 @@ export function Admin() {
                               id: "89716C45-5746-3386-DC89-BB0E00479619",
                               index: "占位文本",
                               name: "占位文本",
-                              postion: "占位文本",
+                              position: "占位文本",
                               contactInfo: "占位文本",
                             },
                           ],
@@ -202,7 +202,8 @@ export function Admin() {
                         instructions: [
                           {
                             id: "2517F526-F393-4BDA-B87E-D631E0CC8B27",
-                            file: "占位文本",
+                            name:"占位文本",
+                            file: "https://iph.href.lu/200x200?text=占位图片",
                           },
                         ],
 
@@ -217,22 +218,22 @@ export function Admin() {
                         quality: [
                           {
                             id: "F38CF419-A24F-48D3-858D-12940B56621F",
-                            name: "",
+                            name: "占位文本",
                             elevation: {
                               name: "占位文本",
-                              file: "占位文本",
+                              file: "https://iph.href.lu/200x200?text=占位图片",
                             },
 
                             cableForce: {
                               name: "占位文本",
-                              file: "占位文本",
+                              file: "https://iph.href.lu/200x200?text=占位图片",
                             },
                           },
                         ],
 
                         sensor: {
                           name: "占位文本",
-                          file: "占位文本",
+                          file: "https://iph.href.lu/200x200?text=占位图片",
                         },
                       });
                       setConfigMutation

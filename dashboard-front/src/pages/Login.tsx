@@ -16,6 +16,7 @@ import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api";
 
+// eslint-disable-next-line react/prop-types
 export function Login({ onLoginStatusChange = new Function() }) {
   const [password, setPassword] = useState("");
   const { mutateAsync: loginMutate, isLoading: loggingIn } = useMutation(login);

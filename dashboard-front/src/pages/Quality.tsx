@@ -55,41 +55,7 @@ export function Quality() {
             }
           />
           {config?.programs[programsId]?.quality[step]?.elevation.file}
-          {/* <TableContainer sx={{ maxHeight: 440 }}>
-            <Table stickyHeader aria-label="sticky table">
-              <TableHead>
-                <TableRow>
-                  <TableCell align="center" rowSpan={2} colSpan={2}>
-                    点号
-                  </TableCell>
-                  <TableCell align="center" colSpan={2}>
-                  实测高程 
-                  </TableCell>
-                  <TableCell align="center" colSpan={2}>
-                  实测高程(m) 
-                  </TableCell>
-                  <TableCell align="center" colSpan={2}>
-                  设计高程(m)
-                  </TableCell>
-                  <TableCell align="center" colSpan={2}>
-                  差值(m)
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell align="center">左</TableCell>
-                  <TableCell align="center">右</TableCell>
-                  <TableCell align="center">左</TableCell>
-                  <TableCell align="center">右</TableCell>
-                  <TableCell align="center">模型标高</TableCell>
-                  <TableCell align="center">测点位置</TableCell>
-                  <TableCell align="center">左</TableCell>
-                  <TableCell align="center">右</TableCell>
-                </TableRow>
-              </TableHead>
-           
-            </Table>
-          </TableContainer>
-          <Box sx={{ height: "8%" }} /> */}
+    
         </>
       )}
       {tab === 1 && (
@@ -103,38 +69,7 @@ export function Quality() {
           />
           {config?.programs[programsId]?.quality[step]?.cableForce.file}
 
-          {/* <TableContainer sx={{ maxHeight: 440 }}>
-            <Table stickyHeader aria-label="sticky table">
-              <TableHead>
-                <TableRow>
-                  <TableCell align="center" rowSpan={2} colSpan={1}>
-                    梁段号
-                  </TableCell>
-                  <TableCell align="center" colSpan={3}>
-                    实测间距/mm
-                  </TableCell>
-                  <TableCell align="center" colSpan={3}>
-                    理论间距/mm
-                  </TableCell>
-                  <TableCell align="center" colSpan={3}>
-                    误差/mm
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell align="center">左</TableCell>
-                  <TableCell align="center">中</TableCell>
-                  <TableCell align="center">右</TableCell>
-                  <TableCell align="center">左</TableCell>
-                  <TableCell align="center">中</TableCell>
-                  <TableCell align="center">右</TableCell>
-                  <TableCell align="center">左</TableCell>
-                  <TableCell align="center">中</TableCell>
-                  <TableCell align="center">右</TableCell>
-                </TableRow>
-              </TableHead>
-            </Table>
-          </TableContainer>
-          <Box sx={{ height: "8%" }} /> */}
+        
         </>
       )}
     </>

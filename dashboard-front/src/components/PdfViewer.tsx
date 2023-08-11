@@ -26,7 +26,7 @@ const PdfViewer: React.FC<{ pdfUrl: string }> = ({ pdfUrl }) => {
     const pages = [];
 
     for (let pageNumber = 1; pageNumber <= numPages!; pageNumber++) {
-      pages.push(<Page key={`page_${pageNumber}`} pageNumber={pageNumber} />);
+      pages.push(<Page key={`page_${pageNumber}`} pageNumber={pageNumber} width={800}/>);
     }
 
     return pages;
@@ -34,7 +34,11 @@ const PdfViewer: React.FC<{ pdfUrl: string }> = ({ pdfUrl }) => {
 
   return (
     
-    <div>
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      width:"100%"
+    }}>
       {numPages && (
         <Document
           file={pdfUrl}

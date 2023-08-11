@@ -4,16 +4,19 @@ import { useState } from "react";
 import { useMutation } from "react-query";
 import { setConfig, useConfig } from "../../api";
 import { Config } from "../../types";
-import { PdfSelector } from "../PdfSelector";
 import * as uuid from "uuid";
 import { AutoTextField } from "../AutoTextField";
+import { useParams } from "react-router-dom";
+import { UploadPdf } from "../UploadPdf";
 
 export function ProgressTab() {
   const { data: config, refetch } = useConfig();
   const [message, setMessage] = useState<string>();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const setConfigMutation = useMutation(setConfig);
-  const programsId=0;
+  const { projectId } = useParams();
+  const programsId =
+    config?.programs.findIndex((program) => program.id === projectId) || 0;
 
   return (
     <Box sx={{ marginTop: "12px" }}>
@@ -49,7 +52,7 @@ export function ProgressTab() {
           disabled={(config?.programs[programsId]?.progress?.length ?? 0) <= 1}
           onClick={() => {
             const newConfig = _.cloneDeep(config ?? {}) as Config;
-            newConfig.programs[0]?.progress.splice(selectedIndex, 1);
+            newConfig.programs[programsId]?.progress.splice(selectedIndex, 1);
             setConfigMutation
               .mutateAsync(newConfig)
               .then(() => {
@@ -86,7 +89,7 @@ export function ProgressTab() {
             setSelectedIndex(index);
           }}
         >
-          <AutoTextField field={`programs[0].progress[${index}].name`} label={"阶段名称"} />
+          <AutoTextField field={`programs[${programsId}].progress[${index}].name`} label={"阶段名称"} />
           {/* <Box sx={{ height: "12px" }} />
           <AutoTextField
             multiline
@@ -94,9 +97,9 @@ export function ProgressTab() {
             label={`${config?.programs[0]?.progress?.[index]?.name}进度说明`}
           />
           <Box sx={{ height: "12px" }} /> */}
-          <PdfSelector
-            field={`programs[0].progress[${index}].model`}
-            label={`${config?.programs[programsId]?.progress?.[index]?.name}进度模型示意图`}
+          <UploadPdf
+            field={`programs[${programsId}].progress[${index}].model`}
+            label={`${config?.programs[programsId]?.progress?.[index]?.name}进度模型文件`}
           />
         </Card>
       ))}

@@ -21,6 +21,9 @@ import { useState } from "react";
 import { getFileURL, useConfig } from "../api";
 import { Text } from "../components/Text";
 import { useParams } from "react-router-dom";
+import LocalPageComponent from "../components/LocalPageComponent";
+
+
 
 export function Intro() {
   const [tab, setTab] = useState(0);
@@ -35,7 +38,6 @@ export function Intro() {
     <>
       <div style={{ display: "flex" }}>
         <Box padding={"5px"}>
-          
           <img
             src={getFileURL(config?.programs[programsId]?.intro.bridgeImg)}
             alt="你好"
@@ -101,7 +103,7 @@ export function Intro() {
         <>
           <Text>{config?.programs[programsId]?.detail?.situation}</Text>
           <Box sx={{ height: "5%" }} />
-
+          <LocalPageComponent parameter={"8ac5086faada42cc97de37ad8deb284b"}></LocalPageComponent>
           <div>model</div>
         </>
       )}
@@ -110,6 +112,7 @@ export function Intro() {
           <Table>
             <TableHead>
               <TableRow>
+                <TableCell>序号</TableCell>
                 <TableCell>姓名</TableCell>
                 <TableCell>职位</TableCell>
                 <TableCell>联系方式</TableCell>
@@ -117,9 +120,10 @@ export function Intro() {
             </TableHead>
             <TableBody>
               {config?.programs[programsId]?.detail.members.map((member) => (
-                <TableRow key={member.name}>
+                <TableRow key={member.id}>
+                  <TableCell>{member.index}</TableCell>
                   <TableCell>{member.name}</TableCell>
-                  <TableCell>{member.postion}</TableCell>
+                  <TableCell>{member.position}</TableCell>
                   <TableCell>{member.contactInfo}</TableCell>
                 </TableRow>
               ))}
@@ -142,11 +146,10 @@ export function Intro() {
               </TableHead>
               <TableBody>
                 {config?.programs[programsId]?.detail.beamData.map(
-                  (data, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{data.id}</TableCell>
+                  (data, id) => (
+                    <TableRow key={id}>
+                      <TableCell>{data.index}</TableCell>
                       <TableCell>{data.long}</TableCell>
-                      <TableCell>{data.width}</TableCell>
                       <TableCell>{data.width}</TableCell>
                       <TableCell>{data.smallMile}</TableCell>
                       <TableCell>{data.bigMile}</TableCell>
@@ -173,9 +176,9 @@ export function Intro() {
               </TableHead>
               <TableBody>
                 {config?.programs[programsId]?.detail.cableData.map(
-                  (data, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{data.id}</TableCell>
+                  (data, id) => (
+                    <TableRow key={id}>
+                      <TableCell>{data.index}</TableCell>
                       <TableCell>{data.elasticity}</TableCell>
                       <TableCell>{data.vertical}</TableCell>
                       <TableCell>{data.length}</TableCell>

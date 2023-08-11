@@ -4,16 +4,19 @@ import { useState } from "react";
 import { useMutation } from "react-query";
 import { setConfig, useConfig } from "../../api";
 import { Config } from "../../types";
-import { PdfSelector } from "../PdfSelector";
 import * as uuid from "uuid";
 import { AutoTextField } from "../AutoTextField";
+import { useParams } from "react-router-dom";
+import { UploadPdf } from "../UploadPdf";
 
 export function QualityTab() {
   const { data: config, refetch } = useConfig();
   const [message, setMessage] = useState<string>();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const setConfigMutation = useMutation(setConfig);
-  const programsId=0;
+  const { projectId } = useParams();
+  const programsId =
+    config?.programs.findIndex((program) => program.id === projectId) || 0;
   return (
     <Box sx={{ marginTop: "12px" }}>
       <Box sx={{ margin: "8px 0" }}>
@@ -25,8 +28,8 @@ export function QualityTab() {
             newConfig.programs[programsId]?.quality.splice(selectedIndex, 0, {
               id: uuid.v4(),
               name: "占位文本",
-              elevation:{name:"占位文本",file:"占位url"},
-              cableForce:{name:"占位文本",file:"占位url"}
+              elevation: { name: "占位文本", file: "https://iph.href.lu/200x200?text=占位图片" },
+              cableForce: { name: "占位文本", file: "https://iph.href.lu/200x200?text=占位图片" },
             });
             setConfigMutation
               .mutateAsync(newConfig)
@@ -75,30 +78,56 @@ export function QualityTab() {
             border:
               selectedIndex === index
                 ? `2px solid ${colors.blue[500]}`
-                : "unset",
+                : "unstet",
             ":hover": {
               cursor: "pointer",
             },
+            display: "flex",
+            flexDirection: "column",
           }}
           onClick={() => {
             setSelectedIndex(index);
           }}
         >
-          <AutoTextField field={`quality[${index}].name`} label={"阶段名称"} />
+          <AutoTextField
+            field={`programs[${programsId}].quality[${index}].name`}
+            label={"质量管理阶段名称"}
+          />
+
           <Box sx={{ height: "12px" }} />
           <Box
             sx={{
               display: "flex",
             }}
           >
-            <PdfSelector
-              field={`quality[${index}].img1`}
-              label={`${config?.programs[programsId]?.quality?.[index]?.elevation.name}安装标高验收pdf`}
+            <AutoTextField
+              field={`programs[${programsId}].quality[${index}].elevation.name`}
+              label={"安装标高验收名称"}
+              multiline
+              fullwidth
             />
-            <Box sx={{ width: "12px" }} />
-            <PdfSelector
-              field={`quality[${index}].img2`}
-              label={`${config?.programs[programsId]?.quality?.[index]?.cableForce.name}斜拉索pdf`}
+            <Box sx={{ width: "100px" }} />
+            <AutoTextField
+              field={`programs[${programsId}].quality[${index}].cableForce.name`}
+              label={"斜拉索名称"}
+              multiline
+              fullwidth
+            />
+          </Box>
+          <Box sx={{ height: "12px" }} />
+          <Box
+            sx={{
+              display: "flex",
+            }}
+          >
+            <UploadPdf
+              field={`programs[${programsId}].quality[${index}].elevation.file`}
+              label={`${config?.programs[programsId]?.quality?.[index]?.name}安装标高验收文件`}
+            />
+            <Box sx={{ width: "300px" }} />
+            <UploadPdf
+              field={`programs[${programsId}].quality[${index}].cableForce.file`}
+              label={`${config?.programs[programsId]?.quality?.[index]?.name}斜拉索文件`}
             />
           </Box>
         </Card>
