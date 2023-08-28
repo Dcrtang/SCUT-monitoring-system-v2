@@ -102,9 +102,10 @@ export function Intro() {
       {tab === 0 && (
         <>
           <Text>{config?.programs[programsId]?.detail?.situation}</Text>
-          <Box sx={{ height: "5%" }} />
-          <LocalPageComponent parameter={"8ac5086faada42cc97de37ad8deb284b"}></LocalPageComponent>
-          <div>model</div>
+       
+       
+          <LocalPageComponent parameter={config?.programs[programsId]?.detail?.model||" "}></LocalPageComponent>
+     
         </>
       )}
       {tab === 1 && (
