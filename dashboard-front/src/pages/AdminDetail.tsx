@@ -169,8 +169,16 @@ export function AdminDetail() {
                         multiline
                         fullwidth
                       />
+                    
                     </Box>
+                    <AutoTextField
+                      field={`programs[${programsId}].detail.model`}
+                      label="模型Token"
+                      multiline
+                      fullwidth
+                    />
                     <Box sx={{ height: "12px" }} />
+                  
                     <ImageSelector
                       field={`programs[${programsId}].intro.bridgeImg`}
                       label="项目概况图片"

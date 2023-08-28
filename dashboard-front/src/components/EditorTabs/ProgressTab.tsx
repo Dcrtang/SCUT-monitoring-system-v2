@@ -29,7 +29,7 @@ export function ProgressTab() {
             newConfig.programs[programsId]?.progress.splice(selectedIndex, 0, {
               id: uuid.v4(),
               name: "占位文本",
-              model: "https://iph.href.lu/200x200?text=占位图片",
+              model: "占位Token",
             });
             setConfigMutation
               .mutateAsync(newConfig)
@@ -97,9 +97,11 @@ export function ProgressTab() {
             label={`${config?.programs[0]?.progress?.[index]?.name}进度说明`}
           />
           <Box sx={{ height: "12px" }} /> */}
-          <UploadPdf
+          <AutoTextField
             field={`programs[${programsId}].progress[${index}].model`}
-            label={`${config?.programs[programsId]?.progress?.[index]?.name}进度模型文件`}
+            label="模型Token"
+            multiline
+            fullwidth
           />
         </Card>
       ))}

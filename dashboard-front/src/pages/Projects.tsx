@@ -117,7 +117,7 @@ export function Projects() {
                     <Card sx={{ height: "100%" }}>
                       <CardActionArea
                         component={Link}
-                        to={"/projectsdetail/" + project.id}
+                        to={"/projectsdetail/" + project.id +"/intro"}
                       >
                         <CardMedia
                           component="img"
@@ -147,7 +147,7 @@ export function Projects() {
                                 }}
                               />
                             </ListItem>
-                            <ListItem disablePadding sx={{ paddingLeft: 2 }}>
+                            <ListItem disablePadding sx={{ paddingLeft: 0 }}>
                               <ListItemIcon>
                                 <Typography
                                   variant="body2"

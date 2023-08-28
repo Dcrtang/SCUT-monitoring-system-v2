@@ -12,7 +12,6 @@ export function Sensor() {
   return (
     <>
       <Box sx={{ borderBottom: 2, borderColor: "divider", marginBottom: 1 }}>
-        应力pdf文件
         <h1> {config?.programs[programsId]?.sensor.name}</h1>
         <Box sx={{ justifyContent: "center" ,alignItems:"center"}}>
           <PdfViewer

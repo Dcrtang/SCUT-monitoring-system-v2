@@ -10,6 +10,7 @@ import { useState } from "react";
 import { Text } from "../components/Text";
 import { getFileURL, useConfig } from "../api";
 import { useParams } from "react-router-dom";
+import LocalPageComponent from "../components/LocalPageComponent";
 
 export function Progress() {
   const [step, setStep] = useState(0);
@@ -25,7 +26,7 @@ export function Progress() {
         <Select
           sx={{ width: "300px" }}
           labelId="step-select-label"
-          label="请选择"
+          label="请选择工序"
           value={step}
           onChange={(e) => {
             setStep(+e.target.value);
@@ -39,8 +40,8 @@ export function Progress() {
           ))}
         </Select>
       </FormControl>
-      <Box>
-        <Box>{config?.programs[programsId]?.progress[step]?.model}</Box>
+      <Box width="100%" height="100%">      
+        <LocalPageComponent parameter={config?.programs[programsId]?.progress[step]?.model||" "}></LocalPageComponent>
       </Box>
     </>
   );
