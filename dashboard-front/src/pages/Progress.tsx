@@ -30,6 +30,7 @@ export function Progress() {
           onChange={(e) => {
             setStep(+e.target.value);
           }}
+          id="my-select"
         >
           {config?.programs[programsId]?.progress?.map((item, index) => (
             <MenuItem key={item.id} value={index}>
