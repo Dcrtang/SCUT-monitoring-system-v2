@@ -30,7 +30,7 @@ import { Login } from "./Login";
 import { Link, useNavigate } from "react-router-dom";
 import { theme } from "../constants";
 import { ListOutlined, Visibility } from "@mui/icons-material";
-import HomeIcon from "@mui/icons-material/Home";
+import ArrowBackIcon from "@mui/icons-material/ExitToApp";
 import { Config } from "../types";
 import _ from "lodash";
 export function Admin() {
@@ -98,7 +98,7 @@ export function Admin() {
         <Box sx={{ display: "flex" ,height:"100%"}}>
           <Box
             sx={{
-              width: "10%",
+              width: "15%",
               height:"100%",
               backgroundColor: "#f5f5f5",
               borderColor: "#2B3643",
@@ -117,13 +117,17 @@ export function Admin() {
               <ListItem disablePadding sx={{ height: "50px" }}>
                 <ListItemButton
                   sx={{ height: "100%", width: "100%" }}
-                  selected={location.pathname === "/admindetail"}
+                  selected={location.pathname === "/"}
+                  onClick={() => {
+                    navigator("/");
+                  }}
                 >
                   <ListItemIcon>
-                    <HomeIcon></HomeIcon>
+                    <ArrowBackIcon/>
                   </ListItemIcon>
-                  <ListItemText primary="我的项目" />
+                  <ListItemText primary="退出管理端" />
                 </ListItemButton>
+                
               </ListItem>
             </List>
           </Box>
