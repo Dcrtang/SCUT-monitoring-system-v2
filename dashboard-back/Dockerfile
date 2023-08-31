@@ -1,9 +1,6 @@
-FROM node:14-alpine AS build
+FROM node:14-alpine
 
 COPY . /app
 WORKDIR /app
-
-RUN npm i
-RUN npm run build
 
 ENTRYPOINT npm run start:prod

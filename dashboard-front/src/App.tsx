@@ -30,7 +30,7 @@ const genrateRoutes = (route: any): React.ReactNode => {
         }) => (
           <Route
             key={curRoute.path}
-            path={curRoute.path}
+            path={typeof curRoute.path === 'string' ? curRoute.path : ''}
             element={curRoute.element}
           />
         )
