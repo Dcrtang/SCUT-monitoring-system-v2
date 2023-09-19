@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  frontend:
+    image: dcrtang/scut-monitoring-front:v2
+    ports:
+      - "80:80"
+  backend:
+    image: dcrtang/scut-monitoring-back:v2
+    environment:
+      - DATA_PATH=/dashboard_data # DO NOT CHANGE, use volumes instead.
+      - PORT=80 # DO NOT CHANGE, for internal use only.
+      - PASSWORD=123123
+      - JWT_SECRET=xb7w5cfycsdiu2xyga1wie8uf58xutxub1s3ygid2cz
+    volumes:
+      - ~/dashboard_data:/dashboard_data
