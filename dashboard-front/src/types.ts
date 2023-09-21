@@ -15,7 +15,10 @@ export interface Config {
 
     detail: {
       situation: string;
-      model: string;
+      model: {
+        fileId: string;
+        viewToken: string;
+      };
 
       members: {
         id: string;
@@ -53,7 +56,10 @@ export interface Config {
     progress: {
       id: string;
       name: string;
-      model: string;
+      model: {
+        fileId: string;
+        viewToken: string;
+      };
     }[];
 
     quality: {

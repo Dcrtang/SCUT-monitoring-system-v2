@@ -29,7 +29,10 @@ export function ProgressTab() {
             newConfig.programs[programsId]?.progress.splice(selectedIndex, 0, {
               id: uuid.v4(),
               name: "占位文本",
-              model: "占位Token",
+              model: {
+                fileId: '占位文本',
+                viewToken: '占位文本',
+              },
             });
             setConfigMutation
               .mutateAsync(newConfig)
@@ -98,8 +101,14 @@ export function ProgressTab() {
           />
           <Box sx={{ height: "12px" }} /> */}
           <AutoTextField
-            field={`programs[${programsId}].progress[${index}].model`}
-            label="模型Token"
+            field={`programs[${programsId}].progress[${index}].model.fileId`}
+            label="模型ID"
+            multiline
+            fullwidth
+          />
+          <AutoTextField
+            field={`programs[${programsId}].progress[${index}].model.viewToken`}
+            label="模型token"
             multiline
             fullwidth
           />

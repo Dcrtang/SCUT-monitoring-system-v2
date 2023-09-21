@@ -168,7 +168,10 @@ export function Admin() {
 
                         detail: {
                           situation: "占位文本",
-                          model: "占位文本",
+                          model: {
+                            fileId: '占位文本',
+                            viewToken: '占位文本',
+                          },
 
                           members: [
                             {
@@ -215,7 +218,10 @@ export function Admin() {
                           {
                             id: "A68B5F56-B53B-AD53-E5C2-11911CB9F7C6",
                             name: "占位文本",
-                            model: "占位文本",
+                            model: {
+                              fileId: '占位文本',
+                              viewToken: '占位文本',
+                            },
                           },
                         ],
 

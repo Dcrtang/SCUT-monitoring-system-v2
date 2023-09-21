@@ -41,7 +41,7 @@ export function Progress() {
         </Select>
       </FormControl>
       <Box width="100%" height="100%">      
-        <LocalPageComponent parameter={config?.programs[programsId]?.progress[step]?.model||" "}></LocalPageComponent>
+        <LocalPageComponent parameter={config?.programs[programsId]?.progress[step]?.model.viewToken||" "}></LocalPageComponent>
       </Box>
     </>
   );

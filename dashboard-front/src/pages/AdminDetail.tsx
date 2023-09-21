@@ -172,8 +172,14 @@ export function AdminDetail() {
                     
                     </Box>
                     <AutoTextField
-                      field={`programs[${programsId}].detail.model`}
-                      label="模型Token"
+                      field={`programs[${programsId}].detail.model.fileId`}
+                      label="模型fileID"
+                      multiline
+                      fullwidth
+                    />
+                     <AutoTextField
+                      field={`programs[${programsId}].detail.model.viewToken`}
+                      label="模型token"
                       multiline
                       fullwidth
                     />

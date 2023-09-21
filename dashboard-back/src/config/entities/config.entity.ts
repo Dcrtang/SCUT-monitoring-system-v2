@@ -15,7 +15,10 @@ export interface Config {
 
     detail: {
       situation: string;
-      model: string;
+      model: {
+        fileId: string;
+        viewToken: string;
+      };
 
       members: {
         id: string;
@@ -53,7 +56,10 @@ export interface Config {
     progress: {
       id: string;
       name: string;
-      model: string;
+      model: {
+        fileId: string;
+        viewToken: string;
+      };
     }[];
 
     quality: {
@@ -94,7 +100,10 @@ export const defaultConfig: Config = {
 
       detail: {
         situation: '占位文本',
-        model: '占位文本',
+        model: {
+          fileId: '占位文本',
+          viewToken: '占位文本',
+        },
 
         members: [
           {
@@ -141,7 +150,10 @@ export const defaultConfig: Config = {
         {
           id: 'A68B5F56-B53B-AD53-E5C2-11911CB9F7C6',
           name: '占位文本',
-          model: '占位文本',
+          model: {
+            fileId: '占位文本',
+            viewToken: '占位文本',
+          },
         },
       ],
 

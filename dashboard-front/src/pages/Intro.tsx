@@ -104,7 +104,7 @@ export function Intro() {
           <Text>{config?.programs[programsId]?.detail?.situation}</Text>
        
        
-          <LocalPageComponent parameter={config?.programs[programsId]?.detail?.model||" "}></LocalPageComponent>
+          <LocalPageComponent parameter={config?.programs[programsId]?.detail?.model.viewToken||" "}></LocalPageComponent>
      
         </>
       )}
