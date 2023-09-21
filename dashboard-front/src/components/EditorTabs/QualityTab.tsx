@@ -122,12 +122,12 @@ export function QualityTab() {
           >
             <UploadPdf
               field={`programs[${programsId}].quality[${index}].elevation.file`}
-              label={`${config?.programs[programsId]?.quality?.[index]?.name}安装标高验收文件`}
+              label={`安装标高验收文件`}
             />
             <Box sx={{ width: "300px" }} />
             <UploadPdf
               field={`programs[${programsId}].quality[${index}].cableForce.file`}
-              label={`${config?.programs[programsId]?.quality?.[index]?.name}斜拉索文件`}
+              label={`斜拉索文件`}
             />
           </Box>
         </Card>

@@ -41,8 +41,8 @@ export function Quality() {
       </FormControl>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
-          <Tab label="梁长" />
-          <Tab label="梁宽" />
+          <Tab label="安装标高验收" />
+          <Tab label="斜拉索索力验收" />
         </Tabs>
       </Box>
       {tab === 0 && (
